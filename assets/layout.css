@@ -1,0 +1,17 @@
+@import url('http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css');
+
+html, body {
+  height: 100%;
+}
+
+.outer {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.inner {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}

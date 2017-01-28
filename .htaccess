@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !^/kassel\.works/
+RewriteCond %{HTTP_HOST} (www\.)?kassel\.works [NC]
+RewriteRule ^(.*)$ /kassel\.works/$1 [L]
