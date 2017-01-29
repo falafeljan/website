@@ -4,11 +4,12 @@ import oh from './images/ohhai.png'
 
 let image, canvas, context
 
-function loadCanvas(url) {
+function loadCanvas(url, handleLoad = () => {}) {
   image = new Image()
 
   image.onload = () => {
     draw()
+    handleLoad()
   }
 
   image.src = url
@@ -41,7 +42,9 @@ window.addEventListener('load', () => {
   canvas = document.querySelector('canvas')
   context = canvas.getContext('2d')
 
-  loadCanvas(oh)
+  loadCanvas(oh, () => {
+    canvas.classList.add('canvas--visible')
+  })
 
   resizeCanvas()
   draw()
