@@ -33,7 +33,7 @@ const config = {
       use: 'html-loader'
     }, {
       test: /\.png$/,
-      use: 'file-loader?name=[name].[ext]'
+      use: 'file-loader'
     }]
   },
 
