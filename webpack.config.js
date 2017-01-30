@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const {email} = require('./settings.json')
 
@@ -72,7 +73,12 @@ const config = {
     new HtmlWebpackPlugin({
       inject: 'body',
       template: `${__dirname}/index.html`
-    })
+    }),
+
+    new CopyWebpackPlugin([{
+      from: `${__dirname}/static`,
+      to: `${__dirname}/public`
+    }])
   ]
 }
 
