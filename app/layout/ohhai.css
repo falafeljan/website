@@ -9,13 +9,19 @@
 
 .ohhai__greetings a {
   white-space: nowrap;
-  border-bottom: 1px solid black;
 }
 
-.ohhai__greetings a em {
-  padding-right: 5px;
+.ohhai__greetings a:before {
+  content: "💌";
+
+  padding-right: 6px;
   vertical-align: bottom;
 
   font-style: normal;
   font-size: 140%;
+}
+
+.ohhai__greetings a em {
+  text-decoration: underline;
+  font-style: normal;
 }
