@@ -1,0 +1,21 @@
+.ohhai {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+
+  max-width: 450px;
+  margin: 25px;
+}
+
+.ohhai__greetings a {
+  white-space: nowrap;
+  border-bottom: 1px solid black;
+}
+
+.ohhai__greetings a em {
+  padding-right: 5px;
+  vertical-align: bottom;
+
+  font-style: normal;
+  font-size: 140%;
+}

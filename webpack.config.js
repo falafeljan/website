@@ -34,6 +34,9 @@ const config = {
     }, {
       test: /\.png$/,
       use: 'file-loader'
+    }, {
+      test: /\.otf$/,
+      use: 'file-loader'
     }]
   },
 
