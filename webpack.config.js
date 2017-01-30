@@ -1,8 +1,10 @@
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 
-const debug = process.env.NODE_ENV !== 'production';
+const {email} = require('./settings.json')
+
+const debug = process.env.NODE_ENV !== 'production'
 
 const config = {
   entry: `${__dirname}/app/index.js`,
@@ -30,7 +32,15 @@ const config = {
       ])
     }, {
       test: /\.html$/,
-      use: 'html-loader'
+      use: [{
+        loader: 'html-loader'
+      }, {
+        loader: 'string-replace-loader',
+        options: {
+          search: '%email%',
+          replace: email
+        }
+      }]
     }, {
       test: /\.png$/,
       use: 'file-loader'
@@ -62,15 +72,14 @@ const config = {
     new HtmlWebpackPlugin({
       inject: 'body',
       template: `${__dirname}/index.html`
-    }),
-
+    })
   ]
-};
+}
 
 if (!debug) {
-  const prodPlugins = [
+  const prodPlugins = new Array(
     new ExtractTextWebpackPlugin('layout.[contenthash].css')
-  ]
+  )
 
   prodPlugins.forEach(plugin =>
     config.plugins.push(plugin))
