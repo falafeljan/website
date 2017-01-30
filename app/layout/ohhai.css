@@ -1,0 +1,27 @@
+.ohhai {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+
+  max-width: 450px;
+  margin: 25px;
+}
+
+.ohhai__greetings a {
+  white-space: nowrap;
+}
+
+.ohhai__greetings a:before {
+  content: "💌";
+
+  padding-right: 6px;
+  vertical-align: bottom;
+
+  font-style: normal;
+  font-size: 140%;
+}
+
+.ohhai__greetings a em {
+  text-decoration: underline;
+  font-style: normal;
+}
