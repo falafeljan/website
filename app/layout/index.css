@@ -1,0 +1,32 @@
+@import url(canvas.css);
+@import url(ohhai.css);
+
+@font-face {
+  font-family: TGHCondensed;
+  src: url("fonts/texgyreheroscn-regular.otf") format("opentype");
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font: 24px/120% TGHCondensed;
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    font-size: 18px;
+    line-height: 120%;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

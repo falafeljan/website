@@ -24,7 +24,9 @@
     "html-webpack-plugin": "^2.26.0",
     "normalize.css": "^5.0.0",
     "serve": "^3.0.2",
+    "string-replace-loader": "^1.0.5",
     "style-loader": "^0.13.1",
+    "synaptic": "^1.0.8",
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.2.0"
   },

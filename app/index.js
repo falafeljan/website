@@ -1,5 +1,5 @@
 import 'normalize.css'
-import './layout/hai.css'
+import './layout/index.css'
 import oh from './images/ohhai.png'
 
 let image, canvas, context
