@@ -35,7 +35,7 @@
     "build": "rm -rf public/**; NODE_ENV=production webpack --progress",
     "dev": "webpack-dev-server --progress",
     "lint": "eslint --ignore-path .gitignore .",
-    "serve": "serve --port 3030",
+    "serve": "serve -p 3030",
     "test": "npm run lint"
   }
 }

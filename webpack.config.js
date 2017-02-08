@@ -53,7 +53,7 @@ const config = {
 
   devServer: {
     contentBase: `${__dirname}/public`,
-    port: 3030
+    port: 3000
   },
 
   plugins: [
