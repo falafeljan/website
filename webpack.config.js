@@ -8,13 +8,13 @@ const {email} = require('./settings.json')
 const debug = process.env.NODE_ENV !== 'production'
 
 const config = {
-  entry: `${__dirname}/app/index.js`,
+  entry: ['babel-polyfill', `${__dirname}/app/index.js`],
   output: {
     path: `${__dirname}/public`,
     filename: debug ? 'bundle.js' : 'bundle.[hash].js'
   },
 
-  devtool: debug ? 'source-map' : 'eval',
+  devtool: debug ? 'source-map' : false,
   performance: {
     hints: debug ? false : 'warning'
   },
