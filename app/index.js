@@ -1,28 +1,24 @@
 import 'normalize.css'
 import './layout/index.css'
 import oh from './images/ohhai.png'
+import completeImage from './completeImage'
 
 let image, canvas, context
 
-function loadCanvas(url, handleLoad = () => {}) {
-  image = new Image()
+async function loadImage(url) {
+  return new Promise(resolve => {
+    image = new Image()
 
-  image.onload = () => {
-    draw()
-    handleLoad()
-  }
-
-  image.src = url
+    image.onload = () => resolve()
+    image.src = url
+  })
 }
 
 
 window.addEventListener('resize', resizeCanvas)
 
 function resizeCanvas() {
-  canvas.width = window.innerWidth
-  canvas.height = window.innerHeight
-
-  draw()
+  // no-op (currently)
 }
 
 function draw() {
@@ -38,14 +34,13 @@ function draw() {
   )
 }
 
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
   canvas = document.querySelector('canvas')
   context = canvas.getContext('2d')
 
-  loadCanvas(oh, () => {
-    canvas.classList.add('canvas--visible')
-  })
+  await loadImage(oh)
+  canvas.classList.add('canvas--visible')
+  completeImage(context, image)
 
   resizeCanvas()
-  draw()
 })
