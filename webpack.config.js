@@ -14,6 +14,7 @@ const config = {
     filename: debug ? 'bundle.js' : 'bundle.[hash].js'
   },
 
+  devtool: debug ? 'source-map' : 'eval',
   performance: {
     hints: debug ? false : 'warning'
   },
