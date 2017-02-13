@@ -3,11 +3,17 @@
 This is quite straightforward so far. Hit up Yarn with `yarn install`, with
 the following commands at your hand:
 
-* `npm run build` Build all assets with Webpack.
-* `npm run dev` Run the Webpack development server for local development.
-* `npm run test` Run tests, lint.
+* `yarn run build` Build all assets with Webpack.
+* `yarn run dev` Run the Webpack development server for local development.
+* `yarn run test` Run tests, lint.
 
 ### Settings
 
 There are some settings to be supplied in the `settings.json` file. Currently,
 setting only the `email` key is provided.
+
+### Deploying 🐳
+
+This repository includes a sample `Dockerfile` for running the website with
+[NGINX](https://www.nginx.com/). To build it properly, build all static assets
+beforehand (see `build` command above), then fire up `docker-build`.
