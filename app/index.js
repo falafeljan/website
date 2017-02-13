@@ -14,24 +14,10 @@ async function loadImage(url) {
   })
 }
 
-
 window.addEventListener('resize', resizeCanvas)
 
 function resizeCanvas() {
   // no-op (currently)
-}
-
-function draw() {
-  const {width, height} = image
-  const {innerWidth, innerHeight} = window
-
-  context.drawImage(
-    image,
-    innerWidth/2 - width/2,
-    innerHeight/2 - height/2,
-    width,
-    height
-  )
 }
 
 window.addEventListener('load', async () => {
