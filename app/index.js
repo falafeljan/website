@@ -1,32 +1,15 @@
 import 'normalize.css'
 import './layout/index.css'
-import oh from './images/ohhai.png'
-import completeImage from './completeImage'
+import {email} from '../settings'
+import createNode from './createNode'
+import {b64DecodeUnicode} from './b64'
 
-let image, canvas, context
+const greetings = `<p class="greetings">
+  <a href="mailto:${
+    b64DecodeUnicode(email)
+  }"><em>Contact</em></a>
+</p>`
 
-async function loadImage(url) {
-  return new Promise(resolve => {
-    image = new Image()
-
-    image.onload = () => resolve()
-    image.src = url
-  })
-}
-
-window.addEventListener('resize', resizeCanvas)
-
-function resizeCanvas() {
-  // no-op (currently)
-}
-
-window.addEventListener('load', async () => {
-  canvas = document.querySelector('canvas')
-  context = canvas.getContext('2d')
-
-  await loadImage(oh)
-  canvas.classList.add('canvas--visible')
-  completeImage(context, image)
-
-  resizeCanvas()
-})
+const containerNode = document.getElementsByTagName('main')[0]
+const greetingsNode = createNode(greetings)
+containerNode.appendChild(greetingsNode)
