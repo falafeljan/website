@@ -76,6 +76,7 @@ const config = {
     }),
 
     new HtmlWebpackPlugin({
+      favicon: `${__dirname}/favicon.ico`,
       inject: 'body',
       template: `${__dirname}/index.html`
     })
