@@ -1,6 +1,6 @@
 {
   "name": "fallafel",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "🥙",
   "main": "index.js",
   "repository": {
@@ -11,24 +11,25 @@
   "license": "UNLICENSED",
   "private": true,
   "devDependencies": {
+    "autoprefixer": "^6.7.5",
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.10",
-    "babel-polyfill": "^6.22.0",
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-stage-0": "^6.22.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.26.1",
     "eslint": "^3.14.1",
-    "extract-text-webpack-plugin": "^2.0.0-rc.1",
+    "extract-text-webpack-plugin": "^2.0.0",
     "file-loader": "^0.10.0",
     "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.26.0",
     "normalize.css": "^5.0.0",
+    "postcss-loader": "^1.3.2",
     "serve": "^3.0.2",
-    "string-replace-loader": "^1.0.5",
+    "style-ext-html-webpack-plugin": "^3.2.0",
     "style-loader": "^0.13.1",
-    "synaptic": "^1.0.8",
+    "typeface-crimson-text": "^0.0.22",
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.2.0"
   },
@@ -36,7 +37,11 @@
     "build": "rm -rf public/**; NODE_ENV=production webpack --progress",
     "dev": "webpack-dev-server --progress",
     "lint": "eslint --ignore-path .gitignore .",
-    "serve": "serve -p 3030",
+    "serve": "serve -p 3000 ./public",
     "test": "npm run lint"
-  }
+  },
+  "browserslist": [
+    "> 5%",
+    "last 2 versions"
+  ]
 }
