@@ -34,10 +34,10 @@
     "webpack-dev-server": "^2.2.0"
   },
   "scripts": {
-    "build": "rm -rf public/**; NODE_ENV=production webpack --progress",
+    "build": "rm -r public/; NODE_ENV=production webpack --progress",
     "dev": "webpack-dev-server --progress",
     "lint": "eslint --ignore-path .gitignore .",
-    "serve": "serve -p 3000 ./public",
+    "start": "serve -p 3000 ./public",
     "test": "npm run lint"
   },
   "browserslist": [
