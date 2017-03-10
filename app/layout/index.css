@@ -43,20 +43,28 @@ main {
     white;
 }
 
-.greetings a {
+nav {
   white-space: nowrap;
+}
 
+nav a {
   display: inline-block;
+  margin-right: 7px;
   padding: 2px 5px;
 
+  text-decoration: underline;
   transition: opacity 100ms ease-in;
 }
 
-.greetings a:hover {
+nav a:hover {
   opacity: .8;
 }
 
-.greetings a:before {
+nav a.contact {
+  text-decoration: none;
+}
+
+nav a.contact:before {
   content: "💌";
 
   padding-right: 7px;
@@ -66,7 +74,12 @@ main {
   font-size: 90%;
 }
 
-.greetings a em {
+nav a.contact em {
   text-decoration: underline;
   font-style: normal;
+}
+
+nav a.github {
+  padding-left: 25px;
+  background: url(github.svg) left center / 18px auto no-repeat;
 }
