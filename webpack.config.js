@@ -56,8 +56,13 @@ const config = {
         loader: 'html-loader'
       }]
     }, {
-      test: /\.png$/,
-      use: 'file-loader'
+      test: /\.(svg|png)$/,
+      use: {
+        loader: 'url-loader',
+        options: {
+          limit: 10000
+        }
+      }
     }, {
       test: /\.otf$/,
       use: 'file-loader'

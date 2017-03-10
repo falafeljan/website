@@ -4,11 +4,15 @@ import {email} from '../settings'
 import createNode from './createNode'
 import {b64DecodeUnicode} from './b64'
 
-const greetings = `<p class="greetings">
-  <a href="mailto:${
-    b64DecodeUnicode(email)
-  }"><em>Contact</em></a>
-</p>`
+const greetings = `<nav role="navigation">
+  <a
+    href="mailto:${b64DecodeUnicode(email)}"
+    class="contact"><em>Contact</em></a>
+
+  <a
+    href="https://github.com/fallafeljan" 
+    class="github">GitHub</a>
+</nav>`
 
 const containerNode = document.getElementsByTagName('main')[0]
 const greetingsNode = createNode(greetings)
