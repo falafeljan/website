@@ -10,7 +10,7 @@ the following commands at your hand:
 ### Settings
 
 There are some settings to be supplied in the `settings.json` file. Currently,
-setting only the `email` key is provided.
+setting only the `email` key is provided. This key contains a Base64-encoded e-mail address.
 
 ### Deploying 🐳
 
