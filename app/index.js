@@ -1,6 +1,6 @@
 import 'normalize.css'
 import './layout/index.css'
-import {email} from '../settings'
+import {email} from '../settings.json'
 import createNode from './createNode'
 import {b64DecodeUnicode} from './b64'
 
