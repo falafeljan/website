@@ -36,6 +36,7 @@ after_success:
       then echo "latest";
       else echo $BRANCH; 
     fi`
+  - docker login -u="$DOCKER_USER" -p="$DOCKER_PASS" registry.kassel.works
   - docker build -t $REPO:$COMMIT .
   - docker tag $REPO:$COMMIT $REPO:$TAG
   - docker tag $REPO:$COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER
