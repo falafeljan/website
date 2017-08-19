@@ -1,6 +1,6 @@
 @font-face {
-  font-family: TGHCondensed;
-  src: url("fonts/texgyreheroscn-regular.otf") format("opentype");
+  font-family: Liaison;
+  src: url("fonts/Liaison-Regular.otf") format("opentype");
 }
 
 html, body {
@@ -13,7 +13,8 @@ body {
   align-items: center;
   justify-content: center;
 
-  font: 26px/120% TGHCondensed;
+  font: 26px/120% Liaison;
+  letter-spacing: -.06em;
 }
 
 @media screen and (max-width: 400px) {
