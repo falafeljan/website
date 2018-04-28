@@ -19,6 +19,7 @@
     "babel-preset-stage-0": "^6.22.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.26.1",
+    "dotenv": "^5.0.1",
     "eslint": "^3.14.1",
     "extract-text-webpack-plugin": "^2.0.0",
     "file-loader": "^0.10.0",
@@ -35,10 +36,10 @@
     "webpack-dev-server": "^2.2.0"
   },
   "scripts": {
-    "build": "rm -r public/; NODE_ENV=production webpack --progress",
+    "build": "rm -r dist/; NODE_ENV=production webpack --progress",
     "dev": "webpack-dev-server --progress",
     "lint": "eslint --ignore-path .gitignore .",
-    "start": "serve -p 3000 ./public",
+    "start": "serve -p 3000 ./dist",
     "test": "npm run lint"
   },
   "browserslist": [
