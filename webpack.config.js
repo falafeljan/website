@@ -1,111 +1,104 @@
+const btoa = require('btoa')
+const dotenv = require('dotenv')
 const webpack = require('webpack')
 const autoprefixer = require('autoprefixer')
-
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
-const StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin')
 
 const debug = process.env.NODE_ENV !== 'production'
 
-const cssLoaders = [{
-  loader: 'css-loader',
-  options: {
-    discardComments: {
-      removeAll: true
-    }
-  }
-}, {
-  loader: 'postcss-loader',
-  options: {
-    plugins: () => [autoprefixer]
-  }
-}]
+dotenv.config()
 
-const config = {
-  entry: [`${__dirname}/app/index.js`],
-  output: {
-    path: `${__dirname}/public`,
-    filename: debug ? 'bundle.js' : 'bundle.[hash].js'
+let emailAddress
+
+if (!process.env.EMAIL_ADDRESS) {
+  throw new Error('Argument `EMAIL_ADDRESS` is required.')
+} else {
+  emailAddress = btoa(process.env.EMAIL_ADDRESS)
+}
+
+module.exports = {
+  entry: {
+    app: `${__dirname}/app/index.js`,
   },
 
+  output: {
+    path: `${__dirname}/dist`,
+    filename: '[name].[hash].js',
+  },
+
+  mode: debug ? 'development' : 'production',
   devtool: debug ? 'source-map' : false,
 
-  performance: {
-    hints: debug ? false : 'warning'
-  },
-
-  stats: {
-    children: false
-  },
-
   module: {
-    rules: [{
-      test: /\.js$/,
-      loader: 'babel-loader'
-    }, {
-      test: /\.css$/,
-      use: debug ?
-        ['style-loader'].concat(cssLoaders) :
-        ExtractTextWebpackPlugin.extract({
-          fallback: 'style-loader',
-          use: cssLoaders
-        })
-    }, {
-      test: /\.html$/,
-      use: [{
-        loader: 'html-loader'
-      }]
-    }, {
-      test: /\.(svg|png)$/,
-      use: {
-        loader: 'url-loader',
-        options: {
-          limit: 10000
-        }
-      }
-    }, {
-      test: /\.otf$/,
-      use: 'file-loader'
-    }]
+    rules: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              discardComments: {
+                removeAll: true,
+              },
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => [autoprefixer],
+            },
+          },
+        ],
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'html-loader',
+          },
+        ],
+      },
+      {
+        test: /\.(svg|png)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+          },
+        },
+      },
+      {
+        test: /\.(otf|eot|woff|woff2)$/,
+        use: 'file-loader',
+      },
+    ],
   },
 
-  devServer: {
-    contentBase: `${__dirname}/public`,
-    port: 3000
+  optimization: {
+    minimize: !debug,
   },
 
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        EMAIL_ADDRESS: JSON.stringify(emailAddress),
+        NODE_ENV: JSON.stringify(debug ? 'development' : 'production'),
+      },
+    }),
+
     new webpack.LoaderOptionsPlugin({
       minimize: !debug,
-      debug
+      debug,
     }),
 
     new HtmlWebpackPlugin({
-      favicon: `${__dirname}/favicon.ico`,
       inject: 'body',
-      template: `${__dirname}/index.html`
-    })
-  ]
-}
-
-if (!debug) {
-  const prodPlugins = [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production')
-      }
+      template: `${__dirname}/index.html`,
     }),
-
-    new ExtractTextWebpackPlugin('layout.css'),
-    new StyleExtHtmlWebpackPlugin(!debug),
-
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true
-    })
-  ]
-
-  prodPlugins.forEach(plugin =>
-    config.plugins.push(plugin))
+  ],
 }
-
-module.exports = config
