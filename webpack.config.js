@@ -1,48 +1,24 @@
 const dotenv = require('dotenv')
 const webpack = require('webpack')
 const autoprefixer = require('autoprefixer')
-
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
-const StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin')
 
 const debug = process.env.NODE_ENV !== 'production'
 
 dotenv.config()
 
-const cssLoaders = [
-  {
-    loader: 'css-loader',
-    options: {
-      discardComments: {
-        removeAll: true,
-      },
-    },
+module.exports = {
+  entry: {
+    app: `${__dirname}/app/index.js`,
   },
-  {
-    loader: 'postcss-loader',
-    options: {
-      plugins: () => [autoprefixer],
-    },
-  },
-]
 
-const config = {
-  entry: [`${__dirname}/app/index.js`],
   output: {
     path: `${__dirname}/dist`,
-    filename: debug ? 'bundle.js' : 'bundle.[hash].js',
+    filename: '[name].[hash].js',
   },
 
+  mode: debug ? 'development' : 'production',
   devtool: debug ? 'source-map' : false,
-
-  performance: {
-    hints: debug ? false : 'warning',
-  },
-
-  stats: {
-    children: false,
-  },
 
   module: {
     rules: [
@@ -52,12 +28,23 @@ const config = {
       },
       {
         test: /\.css$/,
-        use: debug
-          ? ['style-loader'].concat(cssLoaders)
-          : ExtractTextWebpackPlugin.extract({
-              fallback: 'style-loader',
-              use: cssLoaders,
-            }),
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              discardComments: {
+                removeAll: true,
+              },
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => [autoprefixer],
+            },
+          },
+        ],
       },
       {
         test: /\.html$/,
@@ -83,9 +70,8 @@ const config = {
     ],
   },
 
-  devServer: {
-    contentBase: `${__dirname}/dist`,
-    port: 3000,
+  optimization: {
+    minimize: !debug,
   },
 
   plugins: [
@@ -107,18 +93,3 @@ const config = {
     }),
   ],
 }
-
-if (!debug) {
-  const prodPlugins = [
-    new ExtractTextWebpackPlugin('layout.css'),
-    new StyleExtHtmlWebpackPlugin(!debug),
-
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-    }),
-  ]
-
-  prodPlugins.forEach(plugin => config.plugins.push(plugin))
-}
-
-module.exports = config

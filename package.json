@@ -20,26 +20,25 @@
     "css-loader": "^0.28.11",
     "dotenv": "^5.0.1",
     "eslint": "^4.19.1",
-    "extract-text-webpack-plugin": "^2.0.0",
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "normalize.css": "^8.0.0",
     "postcss-loader": "^2.1.4",
     "serve": "^6.5.6",
-    "style-ext-html-webpack-plugin": "^3.2.0",
-    "style-loader": "^0.13.1",
-    "typeface-crimson-text": "^0.0.22",
-    "url-loader": "^0.5.8",
-    "webpack": "^2.2.0",
-    "webpack-dev-server": "^2.2.0"
+    "style-loader": "^0.21.0",
+    "typeface-crimson-text": "^0.0.54",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15",
+    "webpack-serve": "^0.3.1"
   },
   "engines": {
     "node": ">= 9"
   },
   "scripts": {
     "build": "rm -r dist/; NODE_ENV=production webpack --progress",
-    "dev": "webpack-dev-server --progress",
+    "dev": "webpack-serve ./webpack.config.js",
     "lint": "eslint --ignore-path .gitignore .",
     "start": "serve -p 3000 ./dist",
     "test": "npm run lint"
