@@ -1,4 +1,5 @@
 import 'normalize.css'
+import 'typeface-crimson-text'
 import './layout/index.css'
 import createNode from './createNode'
 import {b64DecodeUnicode} from './b64'
