@@ -1,8 +1,3 @@
-@font-face {
-  font-family: Liaison;
-  src: url("fonts/Liaison-Regular.otf") format("opentype");
-}
-
 html, body {
   width: 100%;
   height: 100%;
@@ -13,8 +8,8 @@ body {
   align-items: center;
   justify-content: center;
 
-  font: 26px/120% Liaison;
-  letter-spacing: -.06em;
+  font: 26px/120% 'Crimson Text', Times, serif;
+  letter-spacing: -.02em;
 }
 
 @media screen and (max-width: 400px) {
