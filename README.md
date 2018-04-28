@@ -1,16 +1,17 @@
 # Jan's Personal Website
 
-This is quite straightforward so far. Hit up Yarn with `yarn install`, with
-the following commands at your hand:
+This is quite straightforward so far. Get all dependencies via `npm install`,
+with the following commands at your hand:
 
-* `yarn run build` Build all assets with Webpack.
-* `yarn run dev` Run the Webpack development server for local development.
-* `yarn run test` Run tests, lint.
+* `npm run build` Build all assets with Webpack.
+* `npm run dev` Run the Webpack development server for local development.
+* `npm test` Run tests, lint.
 
 ### Settings
 
-There are some settings to be supplied in the `settings.json` file. Currently,
-setting only the `email` key is provided. This key contains a Base64-encoded e-mail address.
+There are some settings to be supplied in the `.env` configuration file.
+Currently, only the email address key is provided. Create your own configuration
+by renaming `.env-example` and filling in the details.
 
 ### Deploying 🐳
 
