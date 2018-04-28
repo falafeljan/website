@@ -1,3 +1,4 @@
+const btoa = require('btoa')
 const dotenv = require('dotenv')
 const webpack = require('webpack')
 const autoprefixer = require('autoprefixer')
@@ -6,6 +7,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const debug = process.env.NODE_ENV !== 'production'
 
 dotenv.config()
+
+let emailAddress
+
+if (!process.env.EMAIL_ADDRESS) {
+  throw new Error('Argument `EMAIL_ADDRESS` is required.')
+} else {
+  emailAddress = btoa(process.env.EMAIL_ADDRESS)
+}
 
 module.exports = {
   entry: {
@@ -77,7 +86,7 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        EMAIL_ADDRESS: JSON.stringify(process.env.EMAIL_ADDRESS),
+        EMAIL_ADDRESS: JSON.stringify(emailAddress),
         NODE_ENV: JSON.stringify(debug ? 'development' : 'production'),
       },
     }),
