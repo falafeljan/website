@@ -8,9 +8,7 @@ const StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin')
 
 const debug = process.env.NODE_ENV !== 'production'
 
-if (debug) {
-  dotenv.config()
-}
+dotenv.config()
 
 const cssLoaders = [
   {
@@ -79,7 +77,7 @@ const config = {
         },
       },
       {
-        test: /\.otf$/,
+        test: /\.(otf|eot|woff|woff2)$/,
         use: 'file-loader',
       },
     ],
