@@ -1,7 +1,7 @@
-import "normalize.css"
-import "./layout/index.css"
-import createNode from "./createNode"
-import {b64DecodeUnicode} from "./b64"
+import 'normalize.css'
+import './layout/index.css'
+import createNode from './createNode'
+import {b64DecodeUnicode} from './b64'
 
 const greetings = `<nav role="navigation">
   <a
@@ -13,7 +13,7 @@ const greetings = `<nav role="navigation">
     class="github">GitHub</a>
 </nav>`
 
-const containerNode = document.getElementsByTagName("main")[0]
+const containerNode = document.getElementsByTagName('main')[0]
 const greetingsNode = createNode(greetings)
 
 containerNode.appendChild(greetingsNode)
