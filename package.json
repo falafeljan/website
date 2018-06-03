@@ -39,6 +39,7 @@
     "lint-staged": "^7.0.5",
     "normalize.css": "^8.0.0",
     "postcss-loader": "^2.1.4",
+    "prettier": "^1.13.4",
     "serve": "^6.5.6",
     "style-loader": "^0.21.0",
     "typeface-crimson-text": "^0.0.54",
@@ -47,8 +48,15 @@
     "webpack-cli": "^2.0.15",
     "webpack-serve": "^0.3.1"
   },
-  "browserslist": ["> 5%", "last 2 versions"],
+  "browserslist": [
+    "> 5%",
+    "last 2 versions"
+  ],
   "lint-staged": {
-    "*.js": ["prettier --write", "eslint", "git add"]
+    "*.js": [
+      "prettier --write",
+      "eslint",
+      "git add"
+    ]
   }
 }
