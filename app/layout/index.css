@@ -1,3 +1,5 @@
+@import url(./sangbleu.css);
+
 html, body {
   width: 100%;
   height: 100%;
@@ -8,7 +10,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  font: 26px/120% 'Crimson Text', Times, serif;
+  font: 26px/120% 'SangBleu Republic Regular', Times, serif;
   letter-spacing: -.02em;
 }
 

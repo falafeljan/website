@@ -12,7 +12,7 @@ env:
     - COMMIT=${TRAVIS_COMMIT::8}
 
 install:
-  - npm install
+  - npm ci
 
 script:
   - npm test

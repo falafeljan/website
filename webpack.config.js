@@ -1,7 +1,6 @@
 const btoa = require('btoa')
 const dotenv = require('dotenv')
 const webpack = require('webpack')
-const autoprefixer = require('autoprefixer')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const debug = process.env.NODE_ENV !== 'production'
@@ -45,12 +44,6 @@ module.exports = {
               discardComments: {
                 removeAll: true,
               },
-            },
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: () => [autoprefixer],
             },
           },
         ],

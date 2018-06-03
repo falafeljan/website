@@ -1,20 +1,13 @@
+// @flow
 import 'normalize.css'
-import 'typeface-crimson-text'
 import './layout/index.css'
-import createNode from './createNode'
-import {b64DecodeUnicode} from './b64'
 
-const greetings = `<nav role="navigation">
-  <a
-    href="mailto:${b64DecodeUnicode(process.env.EMAIL_ADDRESS)}"
-    class="contact"><em>Contact</em></a>
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './components/App'
 
-  <a
-    href="https://github.com/fallafeljan" 
-    class="github">GitHub</a>
-</nav>`
+const container = document.getElementById('app')
 
-const containerNode = document.getElementsByTagName('main')[0]
-const greetingsNode = createNode(greetings)
-
-containerNode.appendChild(greetingsNode)
+if (container) {
+  ReactDOM.render(<App />, container)
+}
