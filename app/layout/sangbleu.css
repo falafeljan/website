@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'SangBleu Republic Regular';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local('SangBleu Republic Regular'), local('SangBleu Republic-Regular'),
+    url('./sangbleu/SangBleuRepublic-Regular-WebS.woff2') format('woff2'),
+    url('./sangbleu/SangBleuRepublic-Regular-WebS.woff') format('woff');
+}
