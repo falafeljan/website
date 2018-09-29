@@ -5,31 +5,29 @@ services:
 
 language: node_js
 node_js:
-  - '7.6'
+  - '10.10'
 
 env:
   global:
     - COMMIT=${TRAVIS_COMMIT::8}
+    - REPO=registry.kassel.works/website
 
 install:
-  - npm install
+  - npm ci
+
+before_script:
+  - echo "$DOCKER_PASS" |
+    docker login -u "$DOCKER_USER" --password-stdin registry.kassel.works
 
 script:
-  - npm test
-  - npm run build
+  - npm test && npm run build && docker build -t $REPO:$COMMIT .
 
 after_success:
-  - export REPO=registry.kassel.works/website
   - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ];
-      then echo $TRAVIS_BRANCH;
-      else echo $TRAVIS_PULL_REQUEST_BRANCH;
+    then echo $TRAVIS_BRANCH;
+    else echo $TRAVIS_PULL_REQUEST_BRANCH;
     fi)
-  - export TAG=`if [ "$BRANCH" == "master" ];
-      then echo "latest";
-      else echo $BRANCH; 
-    fi`
-  - docker login -u="$DOCKER_USER" -p="$DOCKER_PASS" registry.kassel.works
-  - docker build -t $REPO:$COMMIT .
-  - docker tag $REPO:$COMMIT $REPO:$TAG
-  - docker tag $REPO:$COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER
+  - if [ "$BRANCH" == "master" ];
+    docker tag $REPO:$COMMIT "{$REPO}:master"
+    fi
   - docker push $REPO

@@ -1,54 +1,37 @@
 {
-  "name": "fallafel",
-  "version": "3.0.0",
+  "name": "falafeljan-website",
+  "version": "4.0.0",
   "author": "Jan Kaßel <jan@kassel.works>",
   "description": "🥙",
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "build": "rm -r dist/; NODE_ENV=production webpack --progress",
-    "dev": "webpack-serve ./webpack.config.js",
-    "lint": "eslint --ignore-path .gitignore .",
+    "build": "rm -r dist/; NODE_ENV=production parcel build index.html",
+    "dev": "parcel index.html",
     "precommit": "lint-staged",
-    "start": "serve -p 3000 ./dist",
-    "test": "npm run lint"
+    "test": "flow check"
   },
   "engines": {
-    "node": ">= 9"
+    "node": ">= 10"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fallafeljan/website.git"
+    "url": "https://github.com/falafeljan/website.git"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "devDependencies": {
-    "autoprefixer": "^8.4.1",
-    "babel-core": "^6.22.1",
-    "babel-eslint": "^8.2.3",
-    "babel-loader": "^7.1.4",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-preset-stage-0": "^6.22.0",
-    "btoa": "^1.2.1",
-    "copy-webpack-plugin": "^4.0.1",
-    "css-loader": "^0.28.11",
-    "dotenv": "^5.0.1",
-    "eslint": "^4.19.1",
-    "file-loader": "^1.1.11",
-    "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.2.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^7.0.5",
-    "normalize.css": "^8.0.0",
-    "postcss-loader": "^2.1.4",
-    "serve": "^6.5.6",
-    "style-loader": "^0.21.0",
-    "typeface-crimson-text": "^0.0.54",
-    "url-loader": "^1.0.1",
-    "webpack": "^4.6.0",
-    "webpack-cli": "^2.0.15",
-    "webpack-serve": "^0.3.1"
-  },
-  "browserslist": ["> 5%", "last 2 versions"],
-  "lint-staged": {
-    "*.js": ["prettier --write", "eslint", "git add"]
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "choo": "^6.13.0",
+    "flow-bin": "^0.81.0",
+    "husky": "^1.0.1",
+    "lint-staged": "^7.3.0",
+    "parcel": "^1.10.1",
+    "prettier": "^1.14.3"
   }
 }
