@@ -1,20 +1,21 @@
-import 'normalize.css'
-import 'typeface-crimson-text'
-import './layout/index.css'
-import createNode from './createNode'
-import {b64DecodeUnicode} from './b64'
+// @flow
+import html from 'choo/html'
+import choo from 'choo'
+import homeView from './views/home'
+import legalView from './views/legal'
+import notFound from './views/notFound'
+import meta from './meta'
+import './index.css'
 
-const greetings = `<nav role="navigation">
-  <a
-    href="mailto:${b64DecodeUnicode(process.env.EMAIL_ADDRESS)}"
-    class="contact"><em>Contact</em></a>
+var app = choo({
+  hash: false,
+})
 
-  <a
-    href="https://github.com/fallafeljan" 
-    class="github">GitHub</a>
-</nav>`
+app.use(meta)
 
-const containerNode = document.getElementsByTagName('main')[0]
-const greetingsNode = createNode(greetings)
+app.route('/', homeView)
+app.route('/legal', legalView)
+app.route('/404', notFound)
+app.route('/*', notFound)
 
-containerNode.appendChild(greetingsNode)
+app.mount('#app')

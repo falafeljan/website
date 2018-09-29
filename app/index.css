@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'SangBleu Republic';
+  src: url('./layout/sang-bleu/SangBleuRepublic-Regular-WebM.woff2')
+      format('woff2'),
+    url('./layout/sang-bleu/SangBleuRepublic-Regular-WebM.woff') format('woff');
+}
+
+body {
+  box-sizing: border-box;
+  padding: 35px;
+
+  font: 24px/100% 'SangBleu Republic', 'Times New Roman', times, serif;
+}
+
+.wrapper {
+  max-width: 485px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 140%;
+  margin: 0 0 25px;
+}
+
+p {
+  line-height: 140%;
+  margin: 0 0 25px;
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
+}
+
+footer ul li {
+  display: inline-block;
+  margin: 0 25px 0 0;
+}
+
+footer ul li:last-child {
+  margin-right: 0;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: inherit;
+}
