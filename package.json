@@ -31,6 +31,7 @@
     "flow-bin": "^0.81.0",
     "husky": "^1.0.1",
     "lint-staged": "^7.3.0",
+    "nanoanimation": "^2.1.0",
     "parcel": "^1.10.1",
     "prettier": "^1.14.3"
   }

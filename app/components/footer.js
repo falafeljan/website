@@ -1,21 +1,22 @@
 // @flow
 import html from 'choo/html'
 
-export default function footer() {
+const items = [['Home', '/'], ['Legal', '/legal']]
+
+export default function footer(route: string) {
   return html`
-    <footer>
+    <footer class="wrapper">
       <nav role="navigation">
         <ul>
+        ${items.map(
+          ([label, to]) => html`
           <li>
-            <a href="/">
-              Home
+            <a href=${to} class=${to === route && 'active'}>
+              ${label}
             </a>
           </li>
-          <li>
-            <a href="/legal">
-              Legal
-            </a>
-          </li>
+        `,
+        )}
         </ul>
       </nav>
     </footer>

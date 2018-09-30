@@ -5,15 +5,48 @@
     url('./layout/sang-bleu/SangBleuRepublic-Regular-WebM.woff') format('woff');
 }
 
+html,
 body {
+  height: 100%;
+}
+
+body {
+  display: flex;
   box-sizing: border-box;
   padding: 35px;
 
   font: 24px/100% 'SangBleu Republic', 'Times New Roman', times, serif;
 }
 
-.wrapper {
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+main,
+footer {
   max-width: 485px;
+}
+
+main {
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+
+a {
+  color: rgb(55, 41, 158);
+  text-decoration: none;
+  transition: color 250ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+a:hover {
+  color: rgba(55, 41, 158, 0.75);
+}
+
+a.active {
+  color: inherit;
+  cursor: default;
 }
 
 h1 {
@@ -28,6 +61,11 @@ p {
   margin: 0 0 25px;
 }
 
+footer {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
 footer ul {
   margin: 0;
   padding: 0;
@@ -35,14 +73,19 @@ footer ul {
 
 footer ul li {
   display: inline-block;
-  margin: 0 25px 0 0;
 }
 
-footer ul li:last-child {
-  margin-right: 0;
+footer ul li:after {
+  content: '';
+
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: auto 15px 2px;
+  border: 1px solid black;
+  border-radius: 8px;
 }
 
-footer ul li a {
-  text-decoration: none;
-  color: inherit;
+footer ul li:last-child:after {
+  content: none;
 }

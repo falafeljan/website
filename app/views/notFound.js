@@ -1,8 +1,12 @@
 // @flow
 import html from 'choo/html'
+import main from '../components/main'
 
-export default function notFound() {
-  return html`
-    <h1>404!</h1>
-  `
-}
+export default main(
+  () => html`
+    <p>404! That should not happen.</p>
+  `,
+  {
+    title: 'Not Found',
+  },
+)
