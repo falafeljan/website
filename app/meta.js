@@ -13,8 +13,6 @@ export default function meta(state: State, emitter: EmissionHandler) {
   }
 
   emitter.on('setMeta', ({title, description}: Payload = {}) => {
-    console.log(title, description)
-
     state.meta = {
       title: title === '' ? null : title,
       description: description === '' ? null : description,
