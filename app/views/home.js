@@ -4,25 +4,45 @@ import main from '../components/main'
 
 export default main(
   () => html`
-  <div>
-    <p>
-      I currently pursue my master’s degree in Computer Science at Leipzig
-      University, Germany.
-    </p>
-    <p>
-      Prior to that, I’ve been an intern at Miele, researching about
-      Artificial Intelligence and Smart Home, and at RWTH Aachen University,
-      where I focused on human-computer interaction during my bachelor
-      studies.
+    <div>
+      <p>
+        I currently pursue my Master’s degree in Computer Science at ${' '}<a
+          href="https://www.uni-leipzig.de/"
+          rel="noopener noreferrer"
+          >Leipzig University</a
+        >, Germany, where I'm currently conducting research on peer-to-peer data
+        workflows for fellow scholars.
       </p>
-    <p>
-      My interest lies in digital applications that affect arts, society, and
-      research. I search for artistic simplicity in complex systems and pursue
-      to empower the individual.
-    </p>
-    <p>
-      I’m currently available for research projects as independent contractor.
-    </p>
-  </div>
+      <p>
+        Prior to that, I’ve been an intern at ${' '}<a
+          href="https://www.colony.io/"
+          rel="noopener noreferrer"
+          >Colony</a
+        >, working on integrating distributed systems with Ethereum smart
+        contracts, as well as at ${' '}<a
+          href="https://www.miele.de/"
+          rel="noopener noreferrer"
+          >Miele</a
+        >, researching about Artificial Intelligence applications in the Smart
+        Home context.
+      </p>
+      <p>
+        I did my undergrad at RWTH Aachen University, where I focused on
+        human-computer interaction during ${' '}<a
+          href="https://hci.rwth-aachen.de/kassel"
+          rel="noopener noreferrer"
+          >my Bachelor's thesis</a
+        >
+        at the Media Computing Group.
+      </p>
+      <p>
+        My interest lies in distributed systems that ensure privacy, usability,
+        and autonomy in environments such as arts, society, and academic
+        research.
+      </p>
+      <p>
+        <a href="mailto:hello@kassel.works">hello@kassel.works</a>
+      </p>
+    </div>
   `,
 )
