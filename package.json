@@ -7,6 +7,7 @@
   "private": true,
   "scripts": {
     "build": "rm -r dist/; NODE_ENV=production parcel build index.html",
+    "now-build": "npm run build",
     "dev": "parcel index.html",
     "precommit": "lint-staged",
     "test": "flow check",
