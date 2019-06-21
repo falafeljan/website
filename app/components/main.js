@@ -1,7 +1,6 @@
 // @flow
 import html from 'choo/html'
 import header from './header'
-import footer from './footer'
 import type {State, Emitter} from '../view'
 
 type Options = {
@@ -23,8 +22,6 @@ export default function main(
         <main>
           ${content()}
         </main>
-
-        ${footer(state.route)}
       </div>
     `
   }
