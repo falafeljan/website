@@ -6,11 +6,11 @@ export default main(
   () => html`
     <div>
       <p>
-        I currently pursue my Master’s degree in Computer Science at ${' '}<a
+        I currently pursue a Master’s degree in Computer Science at ${' '}<a
           href="https://www.uni-leipzig.de/"
           rel="noopener noreferrer"
           >Leipzig University</a
-        >, Germany, where I'm currently conducting research on peer-to-peer data
+        >, Germany, where I'm conducting research on peer-to-peer data
         workflows for fellow scholars.
       </p>
       <p>
@@ -27,18 +27,25 @@ export default main(
         Home context.
       </p>
       <p>
-        I did my undergrad at RWTH Aachen University, where I focused on
+        I did my undergrad at ${' '}<a
+          href="https://www.rwth-aachen.de/"
+          rel="noopener noreferrer"
+          >RWTH Aachen University</a>, where I focused on
         human-computer interaction during ${' '}<a
           href="https://hci.rwth-aachen.de/kassel"
           rel="noopener noreferrer"
           >my Bachelor's thesis</a
         >
-        at the Media Computing Group.
+        at the ${' '}<a
+          href="https://hci.rwth-aachen.de/"
+          rel="noopener noreferrer"
+          >Media Computing Group</a
+        >.
       </p>
       <p>
         My interest lies in distributed systems that ensure privacy, usability,
         and autonomy in environments such as arts, society, and academic
-        research.
+        research. If you want to collaborate, please don't hesitate to reach out!
       </p>
       <p>
         <a href="mailto:hello@kassel.works">hello@kassel.works</a>
