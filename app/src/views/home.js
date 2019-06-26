@@ -49,6 +49,7 @@ export default main(
       </p>
       <p>
         <a href="mailto:hello@kassel.works">hello@kassel.works</a>
+        <a href="pgp.asc" download class="pgp">(PGP)</a>
       </p>
     </div>
   `,
