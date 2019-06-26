@@ -11,7 +11,7 @@ export default main(
           rel="noopener noreferrer"
           >Leipzig University</a
         >, Germany, where I'm conducting research on peer-to-peer data workflows
-        for fellow scholars.
+        for fellow scholars during <a href="/thesis">my Master's thesis</a>.
       </p>
       <p>
         Prior to that, I’ve been an intern at ${' '}<a
