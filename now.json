@@ -5,7 +5,7 @@
   "alias": ["kassel.works", "www.kassel.works"],
   "builds": [
     {
-      "src": "package.json",
+      "src": "./app/package.json",
       "use": "@now/static-build",
       "config": {"distDir": "dist"}
     }

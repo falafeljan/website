@@ -2,5 +2,5 @@ node_modules/
 dist/
 .cache
 
-app/layout/sang-bleu
+src/layout/sang-bleu
 .env
