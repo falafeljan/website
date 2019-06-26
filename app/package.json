@@ -21,7 +21,7 @@
     "url": "https://github.com/falafeljan/website.git"
   },
   "lint-staged": {
-    "*.js": [
+    "*.{js,css,markdown,json}": [
       "prettier --write",
       "git add"
     ]
