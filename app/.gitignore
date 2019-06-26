@@ -3,4 +3,7 @@ dist/
 .cache
 
 src/layout/sang-bleu
+src/layout/ia-writer-quattro
+
 .env
+
