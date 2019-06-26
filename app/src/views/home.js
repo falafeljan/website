@@ -10,8 +10,8 @@ export default main(
           href="https://www.uni-leipzig.de/"
           rel="noopener noreferrer"
           >Leipzig University</a
-        >, Germany, where I'm conducting research on peer-to-peer data
-        workflows for fellow scholars.
+        >, Germany, where I'm conducting research on peer-to-peer data workflows
+        for fellow scholars.
       </p>
       <p>
         Prior to that, I’ve been an intern at ${' '}<a
@@ -30,8 +30,8 @@ export default main(
         I did my undergrad at ${' '}<a
           href="https://www.rwth-aachen.de/"
           rel="noopener noreferrer"
-          >RWTH Aachen University</a>, where I focused on
-        human-computer interaction during ${' '}<a
+          >RWTH Aachen University</a
+        >, where I focused on human-computer interaction during ${' '}<a
           href="https://hci.rwth-aachen.de/kassel"
           rel="noopener noreferrer"
           >my Bachelor's thesis</a
@@ -45,11 +45,12 @@ export default main(
       <p>
         My interest lies in distributed systems that ensure privacy, usability,
         and autonomy in environments such as arts, society, and academic
-        research. If you want to collaborate, please don't hesitate to reach out!
+        research. If you want to collaborate, please don't hesitate to reach
+        out!
       </p>
       <p>
         <a href="mailto:hello@kassel.works">hello@kassel.works</a>
-        <a href="pgp.asc" download class="pgp">(PGP)</a>
+        <a id="pgp" href="pgp.asc" download>(PGP)</a>
       </p>
     </div>
   `,
