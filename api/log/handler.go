@@ -17,7 +17,7 @@ import (
 type EntryMeta struct {
 	Title    string `json:"title"`
 	Category string `json:"category"`
-	Date     string `json:"date "` // TODO timestamp
+	Date     string `json:"date "`
 	Location string `json:"location"`
 }
 
@@ -49,18 +49,21 @@ func transformMeta(front map[string]interface{}) (meta EntryMeta, err error) {
 	return meta, err
 }
 
-func Handler(w http.ResponseWriter, r *http.Request) {
-	accessToken := os.Getenv("ACCESS_TOKEN")
-	clientName := os.Getenv("CLIENT_NAME")
-	clientRepo := os.Getenv("CLIENT_REPO")
-
+func createClient(accessToken string) github.Client {
 	ctx := context.Background()
 	ts := oauth2.StaticTokenSource(
 		&oauth2.Token{AccessToken: accessToken},
 	)
 	tc := oauth2.NewClient(ctx, ts)
 
-	client := github.NewClient(tc)
+	return github.NewClient(tc)
+}
+
+func Handler(w http.ResponseWriter, r *http.Request) {
+	accessToken := os.Getenv("ACCESS_TOKEN")
+	clientName := os.Getenv("CLIENT_NAME")
+	clientRepo := os.Getenv("CLIENT_REPO")
+
 	_, files, _, err := client.Repositories.GetContents(ctx, clientName, clientRepo, "/", nil)
 
 	if err != nil {
@@ -78,7 +81,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	for i, file := range files {
 		content, err := fetchEntry(file)
 		if err != nil {
-			log.Fatal("Failed fetching log entry")
+			log.Fatal(err)
 
 			w.WriteHeader(http.StatusInternalServerError)
 			w.Write([]byte("Internal Server Error"))
@@ -86,7 +89,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 
 		front, body, err := m.Parse(strings.NewReader(content))
 		if err != nil {
-			log.Fatal("Failed handling log entry")
+			log.Fatal(err)
 
 			w.WriteHeader(http.StatusInternalServerError)
 			w.Write([]byte("Internal Server Error"))
@@ -95,7 +98,6 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		meta, err := transformMeta(front)
 		if err != nil {
 			log.Fatal(err)
-			log.Fatal("Failed parsing log entry meta")
 
 			w.WriteHeader(http.StatusInternalServerError)
 			w.Write([]byte("Internal Server Error"))
