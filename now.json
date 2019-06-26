@@ -8,9 +8,17 @@
       "src": "./app/package.json",
       "use": "@now/static-build",
       "config": { "distDir": "dist" }
+    },
+    {
+      "src": "api/**/*.go",
+      "use": "@now/go"
     }
   ],
   "routes": [
+    {
+      "src": "/api/log",
+      "dest": "/api/log.go"
+    },
     {
       "src": "/(.*)",
       "dest": "/app/$1"
