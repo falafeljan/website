@@ -2,11 +2,12 @@
   "version": 2,
   "name": "website",
   "scope": "falafeljan",
+  "alias": ["kassel.works", "www.kassel.works"],
   "builds": [
     {
       "src": "package.json",
       "use": "@now/static-build",
-      "config": { "distDir": "dist" }
+      "config": {"distDir": "dist"}
     }
   ]
 }
