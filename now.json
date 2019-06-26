@@ -10,18 +10,23 @@
       "config": { "distDir": "dist" }
     },
     {
-      "src": "api/**/*.go",
+      "src": "api/log/*.go",
       "use": "@now/go"
     }
   ],
   "routes": [
     {
       "src": "/api/log",
-      "dest": "/api/log.go"
+      "dest": "/api/log/handler.go"
     },
     {
       "src": "/(.*)",
       "dest": "/app/$1"
     }
-  ]
+  ],
+  "env": {
+    "ACCESS_TOKEN": "@access-token",
+    "CLIENT_NAME": "@client-name",
+    "CLIENT_REPO": "@client-repo"
+  }
 }
