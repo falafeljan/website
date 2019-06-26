@@ -49,20 +49,22 @@ func transformMeta(front map[string]interface{}) (meta EntryMeta, err error) {
 	return meta, err
 }
 
-func createClient(accessToken string) github.Client {
-	ctx := context.Background()
+func createClient(accessToken string) (ctx context.Context, client *github.Client) {
+	ctx = context.Background()
 	ts := oauth2.StaticTokenSource(
 		&oauth2.Token{AccessToken: accessToken},
 	)
 	tc := oauth2.NewClient(ctx, ts)
 
-	return github.NewClient(tc)
+	return ctx, github.NewClient(tc)
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
 	accessToken := os.Getenv("ACCESS_TOKEN")
 	clientName := os.Getenv("CLIENT_NAME")
 	clientRepo := os.Getenv("CLIENT_REPO")
+
+	ctx, client := createClient(accessToken)
 
 	_, files, _, err := client.Repositories.GetContents(ctx, clientName, clientRepo, "/", nil)
 
