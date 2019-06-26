@@ -2,7 +2,7 @@
   "version": 2,
   "name": "website",
   "scope": "falafeljan",
-  "alias": ["kassel.works", "www.kassel.works"],
+  "alias": "kassel-works.now.sh",
   "builds": [
     {
       "src": "./app/package.json",
