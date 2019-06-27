@@ -16,7 +16,7 @@ export default main(
         workflows in Digital Humanities research. Validity, versioning, privacy,
         and collaboration are just several prospects of well-designed P2P
         networks, all of which can be favourable for the Digital Humanities: A
-        young, fast-paced, and digital field.
+        young, fast-paced, and inherently digital field.
       </p>
 
       <p>
