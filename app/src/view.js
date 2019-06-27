@@ -14,3 +14,8 @@ export type Emitter = (action: string, data: any) => void
 export type EmissionHandler = {
   on: (eventName: string, callback: (...any) => void) => void,
 }
+
+export type ViewOptions = {
+  title?: string,
+  description?: string,
+}
