@@ -6,7 +6,7 @@ import type {State, Emitter, ViewOptions} from '../view'
 
 export default function main(
   content: () => HTMLElement,
-  options: Options = {},
+  options: ViewOptions = {},
 ) {
   return (state: State, emit: Emitter) => {
     emit('setMeta', options)
