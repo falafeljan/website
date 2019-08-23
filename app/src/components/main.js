@@ -20,7 +20,7 @@ export default function main(
         ${header(state, emit)}
 
         <main>
-          ${content()}
+          ${content(state, emit)}
         </main>
       </div>
     `

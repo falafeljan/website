@@ -6,6 +6,7 @@ import hafizView from './views/mediating-hafiz'
 import thesisView from './views/thesis'
 import notFound from './views/notFound'
 import meta from './meta'
+import log from './log'
 import './index.css'
 
 var app = choo({
@@ -13,6 +14,7 @@ var app = choo({
 })
 
 app.use(meta)
+app.use(log)
 
 app.route('/', homeView)
 app.route('/mediating-hafiz', hafizView)
