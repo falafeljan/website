@@ -19,6 +19,7 @@ type EntryMeta struct {
 	Category string `json:"category"`
 	Date     string `json:"date"`
 	Location string `json:"location"`
+	Slug     string `json:"slug"`
 }
 
 type Entry struct {
@@ -57,6 +58,16 @@ func createClient(accessToken string) (ctx context.Context, client *github.Clien
 	tc := oauth2.NewClient(ctx, ts)
 
 	return ctx, github.NewClient(tc)
+}
+
+func getSlug(filename string) (slug string) {
+	dotIndex := strings.LastIndex(filename, ".")
+
+	if dotIndex > -1 {
+		return filename[:dotIndex]
+	} else {
+		return filename
+	}
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
@@ -104,6 +115,8 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 			w.WriteHeader(http.StatusInternalServerError)
 			w.Write([]byte("Internal Server Error"))
 		}
+
+		meta.Slug = getSlug(*file.Name)
 
 		entry := Entry{
 			Meta:    meta,
