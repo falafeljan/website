@@ -7,7 +7,7 @@ import thesisView from './views/thesis'
 import notFound from './views/notFound'
 import meta from './meta'
 import log from './log'
-import './index.css'
+import './layout/index.css'
 
 var app = choo({
   hash: false,

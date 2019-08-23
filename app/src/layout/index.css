@@ -1,16 +1,13 @@
 @font-face {
   font-family: 'SangBleu Republic';
-  src: url('./layout/sang-bleu/SangBleuRepublic-Regular-WebM.woff2')
-      format('woff2'),
-    url('./layout/sang-bleu/SangBleuRepublic-Regular-WebM.woff') format('woff');
+  src: url('./sang-bleu/SangBleuRepublic-Regular-WebM.woff2') format('woff2'),
+    url('./sang-bleu/SangBleuRepublic-Regular-WebM.woff') format('woff');
 }
 
 @font-face {
   font-family: 'iA Writer Quattro';
-  src: url('./layout/ia-writer-quattro/iAWriterQuattroS-Regular.woff2')
-      format('woff2'),
-    url('./layout/ia-writer-quattro/iAWriterQuattroS-Regular.woff')
-      format('woff');
+  src: url('./ia-writer-quattro/iAWriterQuattroS-Regular.woff2') format('woff2'),
+    url('./ia-writer-quattro/iAWriterQuattroS-Regular.woff') format('woff');
 }
 
 html,
