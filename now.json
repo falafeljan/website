@@ -5,7 +5,7 @@
   "alias": "kassel-works.now.sh",
   "builds": [
     {
-      "src": "./app/package.json",
+      "src": "app/package.json",
       "use": "@now/static-build",
       "config": { "distDir": "dist" }
     },
