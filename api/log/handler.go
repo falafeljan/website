@@ -17,7 +17,7 @@ import (
 type EntryMeta struct {
 	Title    string `json:"title"`
 	Category string `json:"category"`
-	Date     string `json:"date "`
+	Date     string `json:"date"`
 	Location string `json:"location"`
 }
 
