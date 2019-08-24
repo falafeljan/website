@@ -70,70 +70,72 @@ func getSlug(filename string) (slug string) {
 	}
 }
 
-func Handler(w http.ResponseWriter, r *http.Request) {
-	accessToken := os.Getenv("ACCESS_TOKEN")
-	clientName := os.Getenv("CLIENT_NAME")
-	clientRepo := os.Getenv("CLIENT_REPO")
+func Handler() http.HandlerFunc {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		accessToken := os.Getenv("ACCESS_TOKEN")
+		clientName := os.Getenv("CLIENT_NAME")
+		clientRepo := os.Getenv("CLIENT_REPO")
 
-	ctx, client := createClient(accessToken)
+		ctx, client := createClient(accessToken)
 
-	_, files, _, err := client.Repositories.GetContents(ctx, clientName, clientRepo, "/", nil)
+		_, files, _, err := client.Repositories.GetContents(ctx, clientName, clientRepo, "/", nil)
 
-	if err != nil {
-		log.Fatal("Failed fetching log repository")
-
-		w.WriteHeader(http.StatusInternalServerError)
-		w.Write([]byte("Internal Server Error"))
-	}
-
-	m := front.NewMatter()
-	m.Handle("---", front.YAMLHandler)
-
-	entries := make([]Entry, len(files))
-
-	for i, file := range files {
-		content, err := fetchEntry(file)
 		if err != nil {
-			log.Fatal(err)
+			log.Fatal("Failed fetching log repository")
 
 			w.WriteHeader(http.StatusInternalServerError)
 			w.Write([]byte("Internal Server Error"))
 		}
 
-		front, body, err := m.Parse(strings.NewReader(content))
+		m := front.NewMatter()
+		m.Handle("---", front.YAMLHandler)
+
+		entries := make([]Entry, len(files))
+
+		for i, file := range files {
+			content, err := fetchEntry(file)
+			if err != nil {
+				log.Fatal(err)
+
+				w.WriteHeader(http.StatusInternalServerError)
+				w.Write([]byte("Internal Server Error"))
+			}
+
+			front, body, err := m.Parse(strings.NewReader(content))
+			if err != nil {
+				log.Fatal(err)
+
+				w.WriteHeader(http.StatusInternalServerError)
+				w.Write([]byte("Internal Server Error"))
+			}
+
+			meta, err := transformMeta(front)
+			if err != nil {
+				log.Fatal(err)
+
+				w.WriteHeader(http.StatusInternalServerError)
+				w.Write([]byte("Internal Server Error"))
+			}
+
+			meta.Slug = getSlug(*file.Name)
+
+			entry := Entry{
+				Meta:    meta,
+				Content: body,
+			}
+
+			entries[i] = entry
+		}
+
+		res, err := json.Marshal(entries)
 		if err != nil {
-			log.Fatal(err)
+			log.Fatal("Failed marshaling API response")
 
 			w.WriteHeader(http.StatusInternalServerError)
 			w.Write([]byte("Internal Server Error"))
 		}
 
-		meta, err := transformMeta(front)
-		if err != nil {
-			log.Fatal(err)
-
-			w.WriteHeader(http.StatusInternalServerError)
-			w.Write([]byte("Internal Server Error"))
-		}
-
-		meta.Slug = getSlug(*file.Name)
-
-		entry := Entry{
-			Meta:    meta,
-			Content: body,
-		}
-
-		entries[i] = entry
-	}
-
-	res, err := json.Marshal(entries)
-	if err != nil {
-		log.Fatal("Failed marshaling API response")
-
-		w.WriteHeader(http.StatusInternalServerError)
-		w.Write([]byte("Internal Server Error"))
-	}
-
-	w.Header().Set("Content-Type", "application/json")
-	w.Write(res)
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(res)
+	})
 }
