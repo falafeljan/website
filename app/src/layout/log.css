@@ -24,6 +24,8 @@
 
 .log-overview ul li a h4 {
   display: inline-block;
+  margin: 0;
+
   font-size: inherit;
   font-weight: normal;
 }
