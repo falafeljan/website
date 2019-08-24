@@ -81,7 +81,7 @@ func Handler() http.HandlerFunc {
 		_, files, _, err := client.Repositories.GetContents(ctx, clientName, clientRepo, "/", nil)
 
 		if err != nil {
-			log.Fatal("Failed fetching log repository")
+			log.Fatal(err)
 
 			w.WriteHeader(http.StatusInternalServerError)
 			w.Write([]byte("Internal Server Error"))
