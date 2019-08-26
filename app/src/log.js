@@ -9,19 +9,27 @@ const endpoint =
 export default function meta(state: State, emitter: EmissionHandler) {
   state.log = {
     fetching: false,
+    fetchedAll: false,
     entries: null,
     error: null,
   }
 
-  emitter.on('fetch-log', async () => {
+  emitter.on('fetch-log', async id => {
     try {
       state.log.fetching = true
       state.log.error = null
 
-      const res = await window.fetch(endpoint)
+      const res = await window.fetch(id ? `${endpoint}?id=${id}` : endpoint)
       const data = await res.json()
 
-      state.log.entries = data
+      state.log.fetchedAll =
+        !state.log.fetchedAll && !id ? true : state.log.fetchedAll
+      state.log.entries = id
+        ? Array.isArray(state.log.entries)
+          ? state.log.entries.append(data)
+          : [data]
+        : data
+
       emitter.emit('render')
     } catch (err) {
       state.log.error = err

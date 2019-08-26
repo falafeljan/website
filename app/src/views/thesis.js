@@ -43,8 +43,8 @@ function logEntry({meta}) {
 }
 
 export default main(
-  (state, emit) => {
-    if (!Array.isArray(state.log.entries)) {
+  ({log}, emit) => {
+    if (!Array.isArray(log.entries) || !log.fetchedAll) {
       emit('fetch-log')
     }
 
@@ -102,8 +102,8 @@ export default main(
           user studies and interviews with scholars in the Digital Humanities.
         </p>
 
-        ${!state.log.fetching && Array.isArray(state.log.entries)
-          ? logOverview(state.log.entries)
+        ${!log.fetching && Array.isArray(log.entries)
+          ? logOverview(log.entries)
           : null}
       </div>
     `

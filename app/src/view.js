@@ -8,6 +8,7 @@ export type State = {
   meta: MetaState,
   route: string,
   title: string,
+  log: Array<any>,
 }
 
 export type Emitter = (action: string, data: any) => void
