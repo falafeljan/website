@@ -7,8 +7,6 @@ import (
 	"net/http"
 )
 
-
-
 func main() {
 	err := godotenv.Load("../.env")
 	if err != nil {
@@ -16,5 +14,7 @@ func main() {
 	}
 
 	http.HandleFunc("/log", enableDevelopmentCORS(api_log.Handler()))
+
+	log.Print("Listening on port 3001.")
 	log.Fatal(http.ListenAndServe(":3001", nil))
 }
