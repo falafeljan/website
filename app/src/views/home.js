@@ -11,7 +11,10 @@ export default main(
           rel="noopener noreferrer"
           >Leipzig University</a
         >, Germany, where I'm conducting research on peer-to-peer data workflows
-        for fellow scholars during <a href="/thesis">my Master's thesis</a>.
+        for fellow scholars as part of <a href="/thesis">my Master's thesis</a>.
+        Furthermore, with <a href="/mediating-hafiz">‘Mediating Hafiz’</a>, we
+        attempt to apply Citizen Science to Farsi language learning and
+        computational transliteration.
       </p>
       <p>
         Prior to that, I’ve been an intern at ${' '}<a
