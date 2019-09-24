@@ -21,6 +21,7 @@
     },
     { "src": "/", "dest": "/app/index.html" },
     { "src": "/thesis", "dest": "/app/index.html" },
+    { "src": "/mediating-hafiz", "dest": "/app/index.html" },
     {
       "src": "/(.*)",
       "dest": "/app/$1"
