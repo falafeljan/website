@@ -88,6 +88,10 @@ li {
   line-height: 140%;
 }
 
+li a {
+  word-break: break-all;
+}
+
 p:last-child {
   margin-bottom: 0;
 }
