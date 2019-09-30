@@ -1,18 +1,17 @@
 {
   "name": "falafeljan-website",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "author": "Jan Kaßel <jan@kassel.works>",
   "description": "🥙",
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "build": "next build",
     "dev": "next",
-    "precommit": "lint-staged",
-    "test": "flow check",
-    "serve": "serve -s ./dist",
+    "build": "npm run fetch-log && next build",
     "start": "next start",
-    "postinstall": "./bin/fetch_log && ./bin/generate_toc",
+    "test": "flow check",
+    "precommit": "lint-staged",
+    "fetch-log": "./bin/fetch-log && ./bin/generate-index",
     "update-log": "(cd content/log && git pull) && ./bin/generate_toc"
   },
   "engines": {
@@ -34,8 +33,7 @@
     "lint-staged": "^7.3.0",
     "next-fonts": "^0.18.0",
     "prettier": "^1.18.2",
-    "raw-loader": "^3.1.0",
-    "serve": "^11.1.0"
+    "raw-loader": "^3.1.0"
   },
   "dependencies": {
     "front-matter": "^3.0.2",
@@ -45,5 +43,11 @@
     "react-dom": "^16.10.1",
     "react-markdown": "^4.2.2",
     "styled-components": "^4.4.0"
+  },
+  "prettier": {
+    "semi": false,
+    "trailingComma": "all",
+    "bracketSpacing": false,
+    "singleQuote": true
   }
 }

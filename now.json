@@ -2,34 +2,5 @@
   "version": 2,
   "name": "website",
   "scope": "falafeljan",
-  "alias": "kassel-works.now.sh",
-  "builds": [
-    {
-      "src": "app/package.json",
-      "use": "@now/static-build",
-      "config": { "distDir": "dist" }
-    },
-    {
-      "src": "api/log/*.go",
-      "use": "@now/go"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/log",
-      "dest": "/api/log/handler.go"
-    },
-    { "src": "/", "dest": "/app/index.html" },
-    { "src": "/thesis", "dest": "/app/index.html" },
-    { "src": "/mediating-hafiz", "dest": "/app/index.html" },
-    {
-      "src": "/(.*)",
-      "dest": "/app/$1"
-    }
-  ],
-  "env": {
-    "ACCESS_TOKEN": "@access-token",
-    "CLIENT_NAME": "@client-name",
-    "CLIENT_REPO": "@client-repo"
-  }
+  "alias": "kassel-works.now.sh"
 }
