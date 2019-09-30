@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+cd content && git clone https://github.com/falafeljan/thesis-log log

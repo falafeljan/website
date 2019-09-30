@@ -6,12 +6,14 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "build": "rm -r dist/; NODE_ENV=production parcel build index.html",
-    "now-build": "npm run build",
-    "dev": "parcel index.html",
+    "build": "next build",
+    "dev": "next",
     "precommit": "lint-staged",
     "test": "flow check",
-    "serve": "serve -s ./dist"
+    "serve": "serve -s ./dist",
+    "start": "next start",
+    "postinstall": "./bin/fetch_log && ./bin/generate_toc",
+    "update-log": "(cd content/log && git pull) && ./bin/generate_toc"
   },
   "engines": {
     "node": ">= 10"
@@ -20,9 +22,6 @@
     "type": "git",
     "url": "https://github.com/falafeljan/website.git"
   },
-  "browserslist": [
-    "since 2017-06"
-  ],
   "lint-staged": {
     "*.{js,css,markdown,json}": [
       "prettier --write",
@@ -30,20 +29,21 @@
     ]
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-plugin-transform-flow-strip-types": "^6.22.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "choo": "^6.13.3",
-    "flow-bin": "^0.81.0",
+    "babel-plugin-styled-components": "^1.10.6",
     "husky": "^1.3.1",
     "lint-staged": "^7.3.0",
-    "nanoanimation": "^2.1.0",
-    "parcel-bundler": "^1.12.3",
-    "parcel-plugin-static-files-copy": "^2.2.1",
+    "next-fonts": "^0.18.0",
     "prettier": "^1.18.2",
+    "raw-loader": "^3.1.0",
     "serve": "^11.1.0"
   },
   "dependencies": {
-    "marked": "^0.7.0"
+    "front-matter": "^3.0.2",
+    "marked": "^0.7.0",
+    "next": "^9.0.7",
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1",
+    "react-markdown": "^4.2.2",
+    "styled-components": "^4.4.0"
   }
 }
