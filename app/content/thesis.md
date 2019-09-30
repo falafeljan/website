@@ -1,0 +1,5 @@
+The Master's thesis I conduct at [Leipzig University](https://www.uni-leipzig.de/) in 2019 concerns the general idea of establishing peer-to-peer (P2P) workflows in Digital Humanities research. Validity, versioning, privacy, and collaboration are just several prospects of well-designed P2P networks, all of which can be favourable for the Digital Humanities: A young, fast-paced, and inherently digital field ([Hunyadi, 2016](https://www.taylorfrancis.com/books/e/9781315572659/chapters/10.4324/9781315572659-10)).
+  
+In particular, the peer-oriented distribution of annotations in [IIIF](https://iiif.io/) resources is considered. The Dat Foundation offers a flexible hypermedia protocol ([Robinson et al., 2018](https://www.nature.com/articles/sdata2018221.pdf)), built upon [hypercore](https://github.com/mafintosh/hypercore), a distributed append-only log ([Ogden et al., 2017](https://github.com/datprotocol/whitepaper/blob/master/dat-paper.pdf)), which will be utilized to built a preliminary prototype implementation.
+
+To evaluate the prospects of emerging P2P workflows, we will conduct user studies and interviews with scholars in the Digital Humanities.
