@@ -1,3 +1,9 @@
-.now/
-.env
+node_modules/
+.next/
+out/
+content/log/
 
+src/layout/sang-bleu/
+src/layout/ia-writer-quattro/*.{woff,woff2}
+log-index.json
+.env

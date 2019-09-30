@@ -1,3 +1,6 @@
-app/Dockerfile
-app/.dockerignore
-app/nginx.conf
+Dockerfile
+.dockerignore
+nginx.conf
+
+content/log/
+log-index.json
