@@ -11,7 +11,7 @@
     "start": "next start",
     "test": "flow check",
     "precommit": "lint-staged",
-    "fetch-log": "./bin/fetch-log && ./bin/generate-index",
+    "fetch-log": "(cd content && git clone https://github.com/falafeljan/thesis-log log) && node generate-index.js",
     "update-log": "(cd content/log && git pull) && ./bin/generate_toc"
   },
   "engines": {
