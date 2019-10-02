@@ -8,7 +8,7 @@ import Title from '../../../components/Title'
 import useDate from '../../../effects/useDate'
 
 const Meta = styled.div`
-  margin-bottom: 25px;
+  margin-bottom: 37px;
 `
 
 const MetaList = styled.ul`
@@ -40,7 +40,7 @@ export default function Entry({post}) {
   return (
     <>
       <Title
-        value={`Thesis Log: ${post.title}`}
+        value={`Thesis Log ⌁ ${post.title}`}
         shortened="Thesis Log"
         noPrefix
       />
