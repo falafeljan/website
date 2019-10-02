@@ -44,19 +44,22 @@ export default function Entry({post}) {
         shortened="Thesis Log"
         noPrefix
       />
-      <Meta>
-        <PostTitle>{post.title}</PostTitle>
 
-        <MetaList>
-          <Item>
-            {months[postDate.getMonth()]} {postDate.getDate()},{' '}
-            {postDate.getFullYear()}
-          </Item>
-          <Item>{post.body.trim().split(/\s+/).length} Words</Item>
-        </MetaList>
-      </Meta>
+      <article>
+        <Meta>
+          <PostTitle>{post.title}</PostTitle>
 
-      <Markdown source={post.body} />
+          <MetaList>
+            <Item>
+              {months[postDate.getMonth()]} {postDate.getDate()},{' '}
+              {postDate.getFullYear()}
+            </Item>
+            <Item>{post.body.trim().split(/\s+/).length} Words</Item>
+          </MetaList>
+        </Meta>
+
+        <Markdown source={post.body} />
+      </article>
     </>
   )
 }
