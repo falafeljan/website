@@ -16,7 +16,7 @@ export default class Title extends Component {
     const title = props.value || prefix
 
     return {
-      title,
+      title: props.shortened || title,
       interpolatedTitle: !!props.noPrefix ? title : `${prefix} ◦ ${title}`,
     }
   }
