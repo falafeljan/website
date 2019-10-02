@@ -1,4 +1,5 @@
 import fm from 'front-matter'
+import smartypants from 'smartypants'
 import React, {useEffect} from 'react'
 import styled from 'styled-components'
 import {H2} from '../../../components/Heading'
@@ -60,7 +61,7 @@ Entry.getInitialProps = async ({query}) => {
     const {attributes, body} = fm(post)
 
     return {
-      content: body,
+      content: smartypants(body, 2),
       title: attributes.title,
       date: attributes.date,
     }

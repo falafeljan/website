@@ -42,6 +42,7 @@
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
     "react-markdown": "^4.2.2",
+    "smartypants": "^0.1.1",
     "styled-components": "^4.4.0"
   },
   "prettier": {
