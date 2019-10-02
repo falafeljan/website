@@ -12,7 +12,7 @@
     "test": "flow check",
     "precommit": "lint-staged",
     "fetch-log": "(cd content && git clone https://github.com/falafeljan/thesis-log log) && node generate-index.js",
-    "update-log": "(cd content/log && git pull) && ./bin/generate_toc"
+    "update-log": "(cd content/log && git pull) && node generate-index.js"
   },
   "engines": {
     "node": ">= 10"
