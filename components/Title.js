@@ -8,17 +8,24 @@ export default class Title extends Component {
   static contextType = MetaContext
 
   state = {
-    title: '',
-    interpolatedTitle: '',
+    title: null,
+    interpolatedTitle: null,
   }
 
   static getDerivedStateFromProps(props) {
-    const title = props.value || prefix
+    let title, interpolatedTitle
 
-    return {
-      title: props.shortened || title,
-      interpolatedTitle: !!props.noPrefix ? title : `${prefix} ◦ ${title}`,
+    if (!props.value) {
+      title = null
+      interpolatedTitle = prefix
+    } else {
+      title = props.shortened || props.value
+      interpolatedTitle = !!props.noPrefix
+        ? props.value
+        : `${prefix} ◦ ${props.value}`
     }
+
+    return {title, interpolatedTitle}
   }
 
   render() {
