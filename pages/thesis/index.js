@@ -37,9 +37,15 @@ const PostItem = styled.li`
   }
 `
 
+const Post = styled.div`
+  display: flex;
+  flex-flow: row;
+`
+
 const PostMeta = styled.span`
+  flex-shrink: 0;
   display: inline-block;
-  margin-right: 12px;
+  margin: 7px 12px 3px 0;
 
   font-family: 'iA Writer Quattro', sans-serif;
   font-size: 60%;
@@ -47,6 +53,7 @@ const PostMeta = styled.span`
 
 const PostTitle = styled(H4)`
   display: inline-block;
+  flex-grow: 1;
   margin: 0;
 
   font-size: inherit;
@@ -58,10 +65,12 @@ function LogEntry({title, date, slug}) {
 
   return (
     <Link href={`/thesis/log/${slug}`}>
-      <PostMeta>
-        {months[postDate.getMonth()]} {postDate.getDate()}
-      </PostMeta>
-      <PostTitle>{title}</PostTitle>
+      <Post>
+        <PostMeta>
+          {months[postDate.getMonth()]} {postDate.getDate()}
+        </PostMeta>
+        <PostTitle>{title}</PostTitle>
+      </Post>
     </Link>
   )
 }
