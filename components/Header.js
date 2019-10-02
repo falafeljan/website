@@ -12,7 +12,7 @@ export default class Header extends Component {
     return (
       <Wrapper as="header">
         <Heading>
-          <Link href={'/'}>
+          <Link href="/">
             <Anchor active={!this.context.title}>Jan Kaßel</Anchor>
           </Link>
 
