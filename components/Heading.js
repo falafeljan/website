@@ -4,7 +4,7 @@ const Heading = styled.h1`
   margin: 0 0 25px;
   font-size: inherit;
   font-weight: normal;
-  line-height: 100%;
+  line-height: 140%;
 `
 
 const BodyHeading = styled(Heading)`

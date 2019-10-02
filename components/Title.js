@@ -12,7 +12,7 @@ export default class Title extends Component {
 
     return (
       <Head>
-        <title>{this.props.value}</title>
+        <title>{this.props.value || 'Jan Kaßel'}</title>
       </Head>
     )
   }

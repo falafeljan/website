@@ -2,5 +2,16 @@
   "version": 2,
   "name": "website",
   "scope": "falafeljan",
-  "alias": "kassel-works.now.sh"
+  "alias": "kassel-works.now.sh",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": {"distDir": "out"}
+    }
+  ],
+  "routes": [
+    {"src": "(.*)/$", "dest": "$1/index.html"},
+    {"src": "([^.]*)", "dest": "$1.html"}
+  ]
 }

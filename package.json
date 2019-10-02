@@ -7,7 +7,8 @@
   "private": true,
   "scripts": {
     "dev": "next",
-    "build": "npm run fetch-log && next build",
+    "build": "next build && next export",
+    "now-build": "npm run fetch-log && npm run build",
     "start": "next start",
     "precommit": "lint-staged",
     "fetch-log": "(cd content && git clone https://github.com/falafeljan/thesis-log log) && node generate-index.js",

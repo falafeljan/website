@@ -1,7 +1,7 @@
-import fm from 'front-matter'
-import smartypants from 'smartypants'
-import React, {useEffect} from 'react'
+import React from 'react'
 import styled from 'styled-components'
+import fetchPost from '../../../lib/fetchPost'
+import months from '../../../lib/months'
 import {H2} from '../../../components/Heading'
 import Markdown from '../../../components/Markdown'
 import Title from '../../../components/Title'
@@ -29,58 +29,33 @@ const Item = styled.li`
 `
 
 const PostTitle = styled(H2)`
+  display: inline-block;
   margin-bottom: 5px;
 `
 
-export default function Entry({content, title, date}) {
-  const postDate = new Date(date)
+export default function Entry({post}) {
+  const postDate = new Date(post.date)
 
   return (
     <>
       <Title value="Thesis Log" />
       <Meta>
-        <PostTitle>{title}</PostTitle>
+        <PostTitle>{post.title}</PostTitle>
 
         <MetaList>
           <Item>
             {months[postDate.getMonth()]} {postDate.getDate()},{' '}
             {postDate.getFullYear()}
           </Item>
-          <Item>{content.trim().split(/\s+/).length} Words</Item>
+          <Item>{post.body.trim().split(/\s+/).length} Words</Item>
         </MetaList>
       </Meta>
 
-      <Markdown source={content} />
+      <Markdown source={post.body} />
     </>
   )
 }
 
-Entry.getInitialProps = async ({query}) => {
-  try {
-    const post = (await import(`../../../content/log/${query.id}.md`)).default
-    const {attributes, body} = fm(post)
-
-    return {
-      content: smartypants(body, 2),
-      title: attributes.title,
-      date: attributes.date,
-    }
-  } catch (err) {
-    return {}
-  }
-}
-
-const months = [
-  'Jan',
-  'Feb',
-  'Mar',
-  'Apr',
-  'May',
-  'Jun',
-  'Jul',
-  'Aug',
-  'Sep',
-  'Oct',
-  'Nov',
-  'Dec',
-]
+Entry.getInitialProps = async ({query}) => ({
+  post: await fetchPost(query.id),
+})

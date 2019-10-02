@@ -13,21 +13,21 @@ async function main() {
       path.extname(file.name) === '.md',
   )
 
-  for (file of files) {
+  for (const file of files) {
     const text = await fs.readFile(path.join(logPath, file.name), 'utf-8')
     const post = fm(text)
+    const id = path.basename(file.name, '.md')
+    const slug = id.substr(id.indexOf('_') + 1)
 
     posts.push({
       ...post.attributes,
-      slug: path.basename(file.name, '.md'),
+      id,
+      slug,
     })
   }
 
   const sortedPosts = posts.sort((a, b) => a.date - b.date)
-  await fs.writeFile(
-    `${__dirname}/log-index.json`,
-    JSON.stringify(sortedPosts),
-  )
+  await fs.writeFile(`${__dirname}/log-index.json`, JSON.stringify(sortedPosts))
 }
 
 main()
