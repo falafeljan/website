@@ -9,7 +9,7 @@ export default function MediatingHafiz() {
     <>
       <Scheherazade />
 
-      <Title value="Mediating Hafiz" />
+      <Title value="Mediating Hafiz" noPrefix />
       <Markdown source={pageContent} />
     </>
   )

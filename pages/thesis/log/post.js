@@ -39,7 +39,7 @@ export default function Entry({post}) {
 
   return (
     <>
-      <Title value="Thesis Log" />
+      <Title value={`Thesis Log: ${post.title}`} noPrefix />
       <Meta>
         <PostTitle>{post.title}</PostTitle>
 
