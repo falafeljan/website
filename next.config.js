@@ -9,4 +9,5 @@ module.exports = withFonts({
 
     return config
   },
+  poweredByHeader: false,
 })
