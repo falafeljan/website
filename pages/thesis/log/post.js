@@ -5,6 +5,7 @@ import months from '../../../lib/months'
 import {H2} from '../../../components/Heading'
 import Markdown from '../../../components/Markdown'
 import Title from '../../../components/Title'
+import useDate from '../../../effects/useDate'
 
 const Meta = styled.div`
   margin-bottom: 25px;
@@ -34,7 +35,7 @@ const PostTitle = styled(H2)`
 `
 
 export default function Entry({post}) {
-  const postDate = new Date(post.date)
+  const postDate = useDate(post.date)
 
   return (
     <>
