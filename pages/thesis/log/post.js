@@ -45,14 +45,16 @@ export default function Entry({post}) {
         noPrefix
       />
 
-      <article>
+      <article itemScope itemType="https://schema.org/BlogPosting">
         <Meta>
-          <PostTitle>{post.title}</PostTitle>
+          <PostTitle itemprop="headline">{post.title}</PostTitle>
 
           <MetaList>
             <Item>
-              {months[postDate.getMonth()]} {postDate.getDate()},{' '}
-              {postDate.getFullYear()}
+              <time itemProp="datePublished" dateTime={postDate.toISOString()}>
+                {months[postDate.getMonth()]} {postDate.getDate()},{' '}
+                {postDate.getFullYear()}
+              </time>
             </Item>
             <Item>{post.body.trim().split(/\s+/).length} Words</Item>
           </MetaList>
