@@ -42,7 +42,7 @@ const Post = styled.div`
   flex-flow: row;
 `
 
-const PostMeta = styled.span`
+const PostDate = styled.time`
   flex-shrink: 0;
   display: inline-block;
   margin: 7px 12px 3px 0;
@@ -64,14 +64,16 @@ function LogEntry({title, date, slug}) {
   const postDate = new Date(date)
 
   return (
-    <Link href={`/thesis/log/${slug}`}>
-      <Post>
-        <PostMeta>
-          {months[postDate.getMonth()]} {postDate.getDate()}
-        </PostMeta>
-        <PostTitle>{title}</PostTitle>
-      </Post>
-    </Link>
+    <article itemScope itemType="https://schema.org/BlogPosting">
+      <Link href={`/thesis/log/${slug}`} itemProp="url">
+        <Post>
+          <PostDate datetime={postDate.toISOString()} itemProp="datePublished">
+            {months[postDate.getMonth()]} {postDate.getDate()}
+          </PostDate>
+          <PostTitle itemProp="headline">{title}</PostTitle>
+        </Post>
+      </Link>
+    </article>
   )
 }
 
