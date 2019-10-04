@@ -5,6 +5,7 @@ import Link from './Link'
 import ListItem from './ListItem'
 import Par from './Par'
 import ReactMarkdown from 'react-markdown'
+import useSmartypants from '../effects/useSmartypants'
 
 const renderers = {
   link: Link,
@@ -14,7 +15,9 @@ const renderers = {
 }
 
 export default function Markdown({source}) {
+  const body = useSmartypants(source)
+
   return (
-    <ReactMarkdown source={source} renderers={renderers} escapeHtml={false} />
+    <ReactMarkdown source={body} renderers={renderers} escapeHtml={false} />
   )
 }
