@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import Link from '../../components/Link'
-import Markdown from '../../components/Markdown'
-import Title from '../../components/Title'
-import {H2, H4} from '../../components/Heading'
-import pageContent from '../../content/thesis.md'
-import index from '../../log-index.json'
+import Link from '../components/Link'
+import Markdown from '../components/Markdown'
+import Title from '../components/Title'
+import {H2, H4} from '../components/Heading'
+import pageContent from '../content/thesis.md'
+import index from '../log-index.json'
 
 const months = [
   'Jan',
@@ -65,7 +65,11 @@ function LogEntry({title, date, slug}) {
 
   return (
     <article itemScope itemType="https://schema.org/BlogPosting">
-      <Link href={`/thesis/log/${slug}`} itemProp="url">
+      <Link
+        href={`/thesis/log/post?id=${slug}`}
+        as={`/thesis/log/${slug}`}
+        itemProp="url"
+      >
         <Post>
           <PostDate datetime={postDate.toISOString()} itemProp="datePublished">
             {months[postDate.getMonth()]} {postDate.getDate()}
