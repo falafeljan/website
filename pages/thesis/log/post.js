@@ -67,5 +67,5 @@ export default function Entry({post}) {
 }
 
 Entry.getInitialProps = async ({query}) => ({
-  post: await fetchPost(query.id),
+  post: await fetchPost(query.slug, true),
 })

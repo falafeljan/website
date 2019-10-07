@@ -20,7 +20,7 @@ module.exports = withFonts({
         [`/thesis/log/${post.slug}`]: {
           page: '/thesis/log/post',
           query: {
-            id: post.id,
+            slug: post.slug,
           },
         },
       }),
