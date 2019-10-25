@@ -7,11 +7,13 @@ import ListItem from './ListItem'
 import Par from './Par'
 import ReactMarkdown from 'react-markdown'
 import useSmartypants from '../effects/useSmartypants'
+import List from './List'
 
 const renderers = {
   inlineCode: Code,
   heading: MarkdownHeading,
   link: Link,
+  list: List,
   listItem: ListItem,
   paragraph: Par,
 }
