@@ -50,8 +50,8 @@ export default function Entry({post}) {
   return (
     <>
       <Title
-        value={`Thesis Log ⌁ ${post.title}`}
-        shortened="Thesis Log"
+        value={`Research Log ⌁ ${post.title}`}
+        shortened="Research Log"
         noPrefix
       />
 
