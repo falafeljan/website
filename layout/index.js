@@ -3,6 +3,7 @@ import {createGlobalStyle} from 'styled-components'
 import SangBleu from './sang-bleu'
 import Quattro from './ia-writer-quattro'
 import Mono from './ia-writer-mono'
+import {mediumWidth, largeWidth} from './grid'
 
 export default () => (
   <>
@@ -29,13 +30,14 @@ const GlobalStyle = createGlobalStyle`
     font: 18px/100% 'SangBleu Republic', 'Times New Roman', times, serif;
   }
   
-  @media screen and (min-width: 450px) and (max-width: 670px) {
+  @media screen and (min-width: ${mediumWidth +
+    1}px) and (max-width: ${largeWidth}px) {
     body {
     font-size: 20px;
     }
   }
   
-  @media screen and (min-width: 671px) {
+  @media screen and (min-width: ${largeWidth + 1}px) {
     body {
       font-size: 24px;
       padding: 35px;

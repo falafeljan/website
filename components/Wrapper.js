@@ -1,4 +1,5 @@
 import styled, {css} from 'styled-components'
+import {largeWidth} from '../layout/grid'
 
 export default styled.main`
   max-width: 498px;
@@ -10,7 +11,7 @@ export default styled.main`
       flex-grow: 1;
     `}
 
-  @media (min-width: 671px) {
+  @media (min-width: ${largeWidth + 1}px) {
     max-width: 600px;
   }
 `

@@ -8,7 +8,7 @@ export default styled.p`
     margin-bottom: 0;
   }
 
-  @media (min-width: 621px) {
+  @media (min-width: 671px) {
     margin: 0 0 25px;
   }
 `

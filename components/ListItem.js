@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Anchor from './Anchor'
+import {mediumWidth} from '../layout/grid'
 
 const Item = styled.li`
   margin-bottom: 10px;
@@ -8,7 +9,7 @@ const Item = styled.li`
   font-size: inherit;
   line-height: 140%;
 
-  @media (max-width: 450px) {
+  @media (max-width: ${mediumWidth}px) {
     ${Anchor} {
       word-break: break-all;
     }
