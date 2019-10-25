@@ -6,6 +6,7 @@ import {H2} from '../../components/Heading'
 import Markdown from '../../components/Markdown'
 import Title from '../../components/Title'
 import useDate from '../../effects/useDate'
+import {mediumWidth, largeWidth} from '../../layout/grid'
 
 const Meta = styled.div`
   margin-bottom: 37px;
@@ -22,10 +23,19 @@ const Item = styled.li`
   margin-right: 17px;
 
   font-family: 'iA Writer Quattro', sans-serif;
-  font-size: 60%;
+  font-size: 75%;
 
   &:last-child {
     margin-right: 0;
+  }
+
+  @media screen and (min-width: ${mediumWidth +
+      1}px) and (max-width: ${largeWidth}px) {
+    font-size: 70%;
+  }
+
+  @media screen and (min-width: ${largeWidth + 1}px) {
+    font-size: 65%;
   }
 `
 
