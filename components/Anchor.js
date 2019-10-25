@@ -1,7 +1,9 @@
 import styled, {css} from 'styled-components'
+import Code from './Code'
+import {blue, blueHover} from '../layout/colors'
 
 export default styled.a`
-  color: ${({active}) => (active ? 'inherit' : 'rgb(55, 41, 158)')};
+  color: ${({active}) => (active ? 'inherit' : blue)};
   cursor: ${({active}) => (active ? 'default' : 'pointer')};
   text-decoration: none;
   transition: color 250ms cubic-bezier(0.19, 1, 0.22, 1);
@@ -10,7 +12,14 @@ export default styled.a`
     !active &&
     css`
       &:hover {
-        color: rgba(55, 41, 158, 0.75);
+        color: ${blueHover};
       }
     `}
+
+  ${Code} {
+    color: ${blue};
+    &:hover {
+      color: ${blueHover};
+    }
+  }
 `
