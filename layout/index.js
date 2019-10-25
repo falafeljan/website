@@ -24,15 +24,21 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     box-sizing: border-box;
     margin: 0;
-    padding: 35px;
+    padding: 15px;
   
-    font: 24px/100% 'SangBleu Republic', 'Times New Roman', times, serif;
+    font: 16px/100% 'SangBleu Republic', 'Times New Roman', times, serif;
   }
   
-  @media screen and (max-width: 670px) {
+  @media screen and (min-width: 450px) and (max-width: 670px) {
     body {
-      font-size: 20px;
-      padding: 15px;
+    font-size: 20px;
+    }
+  }
+  
+  @media screen and (min-width: 671px) {
+    body {
+      font-size: 24px;
+      padding: 35px;
     }
   }
 `
