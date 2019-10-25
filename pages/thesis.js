@@ -6,6 +6,7 @@ import Title from '../components/Title'
 import {H2, H4} from '../components/Heading'
 import pageContent from '../content/thesis.md'
 import index from '../log-index.json'
+import {largeWidth} from '../layout/grid'
 
 const months = [
   'Jan',
@@ -29,11 +30,15 @@ const PostList = styled.ul`
 `
 
 const PostItem = styled.li`
-  margin: 0 0 20px;
+  margin: 0 0 10px;
   padding: 0;
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  @media screen and (min-width: ${largeWidth + 1}px) {
+    margin-bottom: 20px;
   }
 `
 
