@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 15px;
   
-    font: 16px/100% 'SangBleu Republic', 'Times New Roman', times, serif;
+    font: 18px/100% 'SangBleu Republic', 'Times New Roman', times, serif;
   }
   
   @media screen and (min-width: 450px) and (max-width: 670px) {
