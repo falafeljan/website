@@ -3,7 +3,9 @@ import styled from 'styled-components'
 import Anchor from './Anchor'
 
 const Item = styled.li`
-  font-size: 18px;
+  margin-bottom: 10px;
+
+  font-size: inherit;
   line-height: 140%;
 
   @media (max-width: 450px) {

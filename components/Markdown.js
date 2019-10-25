@@ -1,5 +1,6 @@
 // @flow
 import React from 'react'
+import Code from './Code'
 import {MarkdownHeading} from './Heading'
 import Link from './Link'
 import ListItem from './ListItem'
@@ -8,10 +9,11 @@ import ReactMarkdown from 'react-markdown'
 import useSmartypants from '../effects/useSmartypants'
 
 const renderers = {
-  link: Link,
-  paragraph: Par,
+  inlineCode: Code,
   heading: MarkdownHeading,
+  link: Link,
   listItem: ListItem,
+  paragraph: Par,
 }
 
 export default function Markdown({source}) {

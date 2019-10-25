@@ -28,11 +28,21 @@ export default class Title extends Component {
     return {title, interpolatedTitle}
   }
 
-  render() {
+  propagateTitle() {
     if (this.state.title !== this.context.title) {
       this.context.setTitle(this.state.title)
     }
+  }
 
+  componentDidMount() {
+    this.propagateTitle()
+  }
+
+  componentDidUpdate() {
+    this.propagateTitle()
+  }
+
+  render() {
     return (
       <Head>
         <title>{this.state.interpolatedTitle}</title>

@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components'
 
 export default styled.main`
-  max-width: 420px;
+  max-width: 498px;
 
   ${props =>
     props.fill &&
@@ -10,7 +10,7 @@ export default styled.main`
       flex-grow: 1;
     `}
 
-  @media (min-width: 621px) {
-    max-width: 550px;
+  @media (min-width: 671px) {
+    max-width: 600px;
   }
 `
