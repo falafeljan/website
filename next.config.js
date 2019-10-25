@@ -17,8 +17,8 @@ module.exports = withFonts({
     const postPaths = index.reduce(
       (paths, post) => ({
         ...paths,
-        [`/thesis/log/${post.slug}`]: {
-          page: '/thesis/log/post',
+        [`/blog/${post.slug}`]: {
+          page: '/blog/post',
           query: {
             slug: post.slug,
           },
@@ -28,7 +28,7 @@ module.exports = withFonts({
     )
 
     return {
-      ...filterByKeys(defaultPathMap, ['/thesis/log/post']),
+      ...filterByKeys(defaultPathMap, ['/blog/post']),
       ...postPaths,
     }
   },

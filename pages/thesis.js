@@ -66,8 +66,8 @@ function LogEntry({title, date, slug}) {
   return (
     <article itemScope itemType="https://schema.org/BlogPosting">
       <Link
-        href={`/thesis/log/post?slug=${slug}`}
-        as={`/thesis/log/${slug}`}
+        href={`/blog/post?slug=${slug}`}
+        as={`/blog/${slug}`}
         itemProp="url"
       >
         <Post>

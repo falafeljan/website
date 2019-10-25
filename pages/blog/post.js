@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import fetchPost from '../../../lib/fetchPost'
-import months from '../../../lib/months'
-import {H2} from '../../../components/Heading'
-import Markdown from '../../../components/Markdown'
-import Title from '../../../components/Title'
-import useDate from '../../../effects/useDate'
+import fetchPost from '../../lib/fetchPost'
+import months from '../../lib/months'
+import {H2} from '../../components/Heading'
+import Markdown from '../../components/Markdown'
+import Title from '../../components/Title'
+import useDate from '../../effects/useDate'
 
 const Meta = styled.div`
   margin-bottom: 37px;
