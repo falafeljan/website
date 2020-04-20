@@ -4,7 +4,7 @@ import Link from '../components/Link'
 import Markdown from '../components/Markdown'
 import Title from '../components/Title'
 import {H2, H4} from '../components/Heading'
-import pageContent from '../content/thesis.md'
+import pageContent from '../content/hyperwell.md'
 import index from '../log-index.json'
 import {largeWidth} from '../layout/grid'
 

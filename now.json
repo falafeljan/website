@@ -1,8 +1,5 @@
 {
   "version": 2,
-  "name": "website",
-  "scope": "falafeljan",
-  "alias": "kassel-works.now.sh",
   "builds": [
     {
       "src": "package.json",
@@ -10,8 +7,9 @@
       "config": {"distDir": "out"}
     }
   ],
-  "routes": [
-    {"src": "(.*)/$", "dest": "$1/index.html"},
-    {"src": "([^.]*)", "dest": "$1.html"}
-  ]
+  "rewrites": [
+    {"source": "(.*)/$", "destination": "$1/index.html"},
+    {"source": "([^.]*)", "destination": "$1.html"}
+  ],
+  "redirects": [{"source": "/thesis", "destination": "/hyperwell"}]
 }

@@ -1,4 +1,4 @@
-I currently pursue a Master’s degree in Computer Science at [Leipzig University](https://www.uni-leipzig.de/), Germany, where I'm conducting research on peer-to-peer data workflows for fellow scholars as part of [my Master's thesis](/thesis). Furthermore, with [‘Mediating Hafiz’](/mediating-hafiz), we attempt to apply Citizen Science to Farsi language learning and computational transliteration.
+I currently pursue a Master’s degree in Computer Science at [Leipzig University](https://www.uni-leipzig.de/), Germany, where I'm conducting research on peer-to-peer data workflows for fellow scholars as part of [my Master's thesis](/hyperwell). Furthermore, with [‘Mediating Hafiz’](/mediating-hafiz), we attempt to apply Citizen Science to Farsi language learning and computational transliteration.
 
 Prior to that, I’ve been an intern at [Colony](https://colony.io/), working on integrating distributed systems with Ethereum smart contracts, as well as at [Miele](https://www.miele.de/), researching about Artificial Intelligence applications in the Smart Home context.
 

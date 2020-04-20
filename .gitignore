@@ -8,3 +8,5 @@ src/layout/sang-bleu/
 src/layout/ia-writer-quattro/*.{woff,woff2}
 log-index.json
 .env
+
+.now
