@@ -10,7 +10,6 @@
     "build": "next build && next export",
     "now-build": "npm run fetch-log && npm run build",
     "start": "next start",
-    "precommit": "lint-staged",
     "fetch-log": "(cd content && git clone https://github.com/falafeljan/thesis-log log) && node generate-index.js",
     "update-log": "(cd content/log && git pull) && node generate-index.js"
   },
@@ -50,5 +49,10 @@
     "trailingComma": "all",
     "bracketSpacing": false,
     "singleQuote": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
