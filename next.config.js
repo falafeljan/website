@@ -9,6 +9,11 @@ module.exports = withFonts({
       use: 'raw-loader',
     })
 
+    config.module.rules.push({
+      test: /\.bib$/,
+      use: 'raw-loader',
+    })
+
     return config
   },
 

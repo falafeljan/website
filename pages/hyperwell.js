@@ -89,7 +89,7 @@ function LogEntry({title, date, slug}) {
 export default function Main() {
   return (
     <>
-      <Title value="Master's Thesis" />
+      <Title value="Hyperwell" />
       <Markdown source={pageContent} />
 
       <div className="log-overview">

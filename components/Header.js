@@ -16,7 +16,7 @@ export default class Header extends Component {
             <Anchor active={!this.context.title}>Jan Kaßel</Anchor>
           </Link>
 
-          {this.context.title && <> — {this.context.title}</>}
+          {this.context.title && <> – {this.context.title}</>}
         </Heading>
       </Wrapper>
     )

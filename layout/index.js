@@ -5,7 +5,7 @@ import Quattro from './ia-writer-quattro'
 import Mono from './ia-writer-mono'
 import {mediumWidth, largeWidth} from './grid'
 
-export default () => (
+const Layout = () => (
   <>
     <SangBleu />
     <Quattro />
@@ -14,6 +14,7 @@ export default () => (
     <GlobalStyle />
   </>
 )
+export default Layout
 
 const GlobalStyle = createGlobalStyle`
   html,

@@ -22,7 +22,7 @@ export default class Title extends Component {
       title = props.shortened || props.value
       interpolatedTitle = !!props.noPrefix
         ? props.value
-        : `${prefix} ◦ ${props.value}`
+        : `${prefix} – ${props.value}`
     }
 
     return {title, interpolatedTitle}
