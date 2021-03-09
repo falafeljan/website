@@ -1,4 +1,4 @@
-The following list shall provide an overview of all relevant academic publications that I authored or co-authored. You may obtain [the BibTeX entries directly form this website](/publication.bib).
+The following list shall provide an overview of all relevant academic publications that I authored or co-authored. You may obtain [the BibTeX entries directly form this website](/publications.bib).
 
 - Foradi, M., Kaßel, J., Pein, J., &amp; Crane, G. R. (2019). Multi-Modal Citizen Science: From Disambiguation to Transcription of Classical Literature. _Proceedings of the 30th ACM Conference on Hypertext and Social Media_, 49–53. https://doi.org/10.1145/3342220.3343667
 - Foradi, M., Pein, J., &amp; Kaßel, J. (2019). _Phonetic Transcription of Classical Literature: A Learnersourcing - Based Approach_. http://elte-dh.hu/conf2019/
