@@ -4,3 +4,4 @@ The following list shall provide an overview of all relevant academic publicatio
 - Foradi, M., Pein, J., &amp; Kaßel, J. (2019). _Phonetic Transcription of Classical Literature: A Learnersourcing - Based Approach_. http://elte-dh.hu/conf2019/
 - Kaßel, J. (2020). _Hyperwell: Local-First, Collaborative Notebooks for Digital Annotation_ \[Universität Leipzig\]. https://doi.org/10.5281/zenodo.4012432
 - Kaßel, J., &amp; Köntges, T. (2020). From Me to You: Peer to Peer Collaboration With Linked Data. _Sharing the Experience: Workflows for the Digital Humanities. Proceedings of the DARIAH-CH Workshop 2019 (Neuchâtel)_. https://doi.org/10.5281/ZENODO.3633416
+- Nicolás Hinrichs, Maryam Foradi, Tariq Yousef, Elisa Hartmann, Susanne Triesch, Jan Kaßel und Johannes Pein. 2022. “Embodied Metarepresentations”. _Frontiers in Neurorobotics_ 16. ISSN: 1662-5218. https://doi.org/10.3389/fnbot.2022.836799
