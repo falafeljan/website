@@ -1,5 +1,5 @@
 {
-  "name": "falafeljan-website",
+  "name": "website",
   "version": "5.0.0",
   "author": "Jan Kaßel <jan@kassel.works>",
   "description": "🥙",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/falafeljan/website.git"
+    "url": "https://github.com/jankaszel/website.git"
   },
   "lint-staged": {
     "*.{js,css,markdown,json}": [
@@ -29,7 +29,7 @@
   "devDependencies": {
     "babel-plugin-styled-components": "^1.12.0",
     "husky": "^1.3.1",
-    "lint-staged": "^7.3.0",
+    "lint-staged": "^11.2.6",
     "next-fonts": "^0.18.0",
     "prettier": "^1.19.1",
     "raw-loader": "^3.1.0"
@@ -37,10 +37,10 @@
   "dependencies": {
     "front-matter": "^3.2.1",
     "marked": "^0.7.0",
-    "next": "^10.0.3",
+    "next": "^11.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-markdown": "^4.3.1",
+    "react-markdown": "^7.0.0",
     "smartypants": "^0.1.1",
     "styled-components": "^4.4.1"
   },
