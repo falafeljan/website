@@ -1,6 +1,6 @@
 With years of practical experience, my work resides at the intersection between technology, arts, and culture. I stem my practice from academic research, interdisciplinary design processes, and cutting-edge full-stack software engineering.
 
-Currently, I work as a software engineer at [Neighbourhoodie](https://neighbourhood.ie/), a software consulting agency that specialises in offline-capable applications and the [Apache CouchDB database](https://couchdb.apache.org/).
+Until June 2022, I worked as a software engineer at [Neighbourhoodie](https://neighbourhood.ie/), a software consulting agency that specialises in offline-capable applications and the [Apache CouchDB database](https://couchdb.apache.org/).
 
 As a research assistant on the [DFG](https://www.dfg.de/en/)-funded project [“Digital Critical Edition of the Nyāyabhāsya”](https://www.gko.uni-leipzig.de/indologie-zaw/forschungprojekte/aktuelle-projekte/projekt-digitale-kritische-edition.html) at Universität Leipzig, I maintained software for managing and publishing digital critical editions of Sanskrit works.
 
