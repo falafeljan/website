@@ -10,18 +10,15 @@ import useSmartypants from '../effects/useSmartypants'
 import List from './List'
 
 const renderers = {
-  inlineCode: Code,
-  heading: MarkdownHeading,
-  link: Link,
-  list: List,
-  listItem: ListItem,
-  paragraph: Par,
+  code: Code,
+  h1: MarkdownHeading,
+  a: Link,
+  ul: List,
+  li: ListItem,
+  p: Par,
 }
 
 export default function Markdown({source}) {
   const body = useSmartypants(source)
-
-  return (
-    <ReactMarkdown source={body} renderers={renderers} escapeHtml={false} />
-  )
+  return <ReactMarkdown children={body} components={renderers} />
 }
