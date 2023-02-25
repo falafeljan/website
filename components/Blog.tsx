@@ -1,10 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Link from '../components/Link'
-import Markdown from '../components/Markdown'
-import Title from '../components/Title'
 import {H2, H4} from '../components/Heading'
-import pageContent from '../content/hyperwell.md'
 import index from '../log-index.json'
 import {largeWidth} from '../layout/grid'
 
@@ -86,23 +83,18 @@ function LogEntry({title, date, slug}) {
   )
 }
 
-export default function Main() {
+export default function Blog() {
   return (
-    <>
-      <Title value="Hyperwell" />
-      <Markdown source={pageContent} />
+    <div className="log-overview">
+      <H2>Research Log</H2>
 
-      <div className="log-overview">
-        <H2>Research Log</H2>
-
-        <PostList>
-          {index.map(entry => (
-            <PostItem key={entry.slug}>
-              <LogEntry {...entry} />
-            </PostItem>
-          ))}
-        </PostList>
-      </div>
-    </>
+      <PostList>
+        {index.map((entry) => (
+          <PostItem key={entry.slug}>
+            <LogEntry {...entry} />
+          </PostItem>
+        ))}
+      </PostList>
+    </div>
   )
 }

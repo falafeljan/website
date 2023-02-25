@@ -1,13 +1,12 @@
-import React from 'react'
-import Markdown from '../components/Markdown'
-import pageContent from '../content/cv.md'
-import Title from '../components/Title'
-
 export default function Main() {
-  return (
-    <>
-      <Title />
-      <Markdown source={pageContent} />
-    </>
-  )
+  return null
+}
+
+export async function getStaticProps(context) {
+  return {
+    redirect: {
+      destination: 'https://kinopio.club/jan-s-portfolio-zgvQLiOhDpLTUnMxPMqEV',
+      permanent: false,
+    },
+  }
 }

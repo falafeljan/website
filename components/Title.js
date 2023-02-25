@@ -1,11 +1,10 @@
 import React, {Component} from 'react'
 import Head from 'next/head'
-import {MetaContext} from './Container'
 
 const prefix = 'Jan Kaßel'
 
 export default class Title extends Component {
-  static contextType = MetaContext
+  static contextType = {}
 
   state = {
     title: null,

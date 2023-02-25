@@ -1,0 +1,12 @@
+.wrapper {
+  max-width: 498px;
+}
+
+.wrapper.fill {
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+
+@media (min-width: 671px) {
+  max-width: 600px;
+}

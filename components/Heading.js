@@ -1,17 +1,5 @@
 import styled from 'styled-components'
 
-const Heading = styled.h1`
-  margin: 0 0 25px;
-  font-size: inherit;
-  font-weight: normal;
-  line-height: 140%;
-`
-
-const BodyHeading = styled(Heading)`
-  font-weight: bold;
-  margin-top: 37px;
-`
-
 const renderAs = tagName => ({children, ...props}) => (
   <BodyHeading {...props} as={tagName}>
     {children}

@@ -3,7 +3,7 @@ const path = require('path')
 const fm = require('front-matter')
 
 async function main() {
-  const logPath = `${__dirname}/content/log`
+  const logPath = `${__dirname}/blog`
 
   const posts = []
   const files = (await fs.readdir(logPath, {withFileTypes: true})).filter(
@@ -27,7 +27,7 @@ async function main() {
   }
 
   const sortedPosts = posts.sort((a, b) => a.date - b.date)
-  await fs.writeFile(`${__dirname}/log-index.json`, JSON.stringify(sortedPosts))
+  await fs.writeFile(`${__dirname}/blog-index.json`, JSON.stringify(sortedPosts))
 }
 
 main()

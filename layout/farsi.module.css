@@ -1,0 +1,17 @@
+@font-face {
+  font-family: Scheherazade;
+  src: url('/fonts/scheherazade/scheherazade-regular.woff');
+}
+
+@font-face {
+  font-family: Scheherazade;
+  font-weight: bold;
+  src: url('/fonts/scheherazade/scheherazade-bold.woff');
+}
+
+.farsi {
+  direction: rtl;
+  text-align: right;
+  font-family: Scheherazade;
+  font-weight: bold;
+}

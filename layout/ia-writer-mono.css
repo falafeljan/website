@@ -1,0 +1,5 @@
+@font-face {
+  font-family: 'iA Writer Mono';
+  src: url('/fonts/ia-writer-mono/iAWriterMonoS-Regular.woff2') format('woff2'),
+    url('/fonts/ia-writer-mono/iAWriterMonoS-Regular.woff') format('woff');
+}

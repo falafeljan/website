@@ -1,9 +1,10 @@
 import React from 'react'
+import classNames from 'classnames'
 import App from 'next/app'
-import Container from '../components/Container'
-import Layout from '../layout'
 import Header from '../components/Header'
-import Wrapper from '../components/Wrapper'
+
+import '../layout/global.css'
+import styles from '../layout/layout.module.css'
 
 export default class MyApp extends App {
   render() {
@@ -11,15 +12,10 @@ export default class MyApp extends App {
 
     return (
       <>
-        <Layout />
-
-        <Container>
-          <Header />
-
-          <Wrapper grow>
-            <Component {...pageProps} />
-          </Wrapper>
-        </Container>
+        <Header />
+        <div className={classNames(styles.wrapper, styles.grow)}>
+          <Component {...pageProps} />
+        </div>
       </>
     )
   }
