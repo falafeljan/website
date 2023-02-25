@@ -1,13 +1,17 @@
+# node & co.
 node_modules/
 .next/
-.now/
-out/
-content/log/
 
-src/layout/sang-bleu/
-src/layout/ia-writer-quattro/*.{woff,woff2}
-log-index.json
+# fonts
+public/fonts/ia-writer-mono
+public/fonts/ia-writer-quattro
+public/fonts/sang-bleu
+public/fonts/scheherazade
+
+# blog
+blog-index.json
+blog
 .env
 
-.now
+# infra
 .vercel

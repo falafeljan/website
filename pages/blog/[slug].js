@@ -7,6 +7,7 @@ import Markdown from '../../components/Markdown'
 import Title from '../../components/Title'
 import useDate from '../../effects/useDate'
 import {mediumWidth, largeWidth} from '../../layout/grid'
+import index from '../../log-index.json'
 
 const Meta = styled.div`
   margin-bottom: 37px;
@@ -30,7 +31,7 @@ const Item = styled.li`
   }
 
   @media screen and (min-width: ${mediumWidth +
-      1}px) and (max-width: ${largeWidth}px) {
+    1}px) and (max-width: ${largeWidth}px) {
     font-size: 70%;
   }
 
@@ -76,6 +77,15 @@ export default function Entry({post}) {
   )
 }
 
-Entry.getInitialProps = async ({query}) => ({
-  post: await fetchPost(query.slug, true),
-})
+export async function getStaticProps(context) {
+  return {
+    props: await fetchPost(context.query.slug, true),
+  }
+}
+
+export async function getStaticPaths() {
+  return {
+    paths: index.map(post => ({params: {slug: post.slug}}))
+    fallback: false, // can also be true or 'blocking'
+  }
+}

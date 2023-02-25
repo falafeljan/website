@@ -1,40 +1,24 @@
 const withFonts = require('next-fonts')
 const filterByKeys = require('./lib/filterByKeys')
-const index = require('./log-index.json')
 
-module.exports = withFonts({
-  webpack: config => {
-    config.module.rules.push({
-      test: /\.md$/,
-      use: 'raw-loader',
-    })
-
-    config.module.rules.push({
-      test: /\.bib$/,
-      use: 'raw-loader',
-    })
-
-    return config
-  },
-
-  poweredByHeader: false,
-  exportPathMap: async function(defaultPathMap) {
-    const postPaths = index.reduce(
-      (paths, post) => ({
-        ...paths,
-        [`/blog/${post.slug}`]: {
-          page: '/blog/post',
-          query: {
-            slug: post.slug,
-          },
-        },
-      }),
-      {},
-    )
-
-    return {
-      ...filterByKeys(defaultPathMap, ['/blog/post']),
-      ...postPaths,
-    }
+// https://nextjs.org/docs/advanced-features/using-mdx
+const withMDX = require('@next/mdx')({
+  extension: /\.mdx?$/,
+  options: {
+    // If you use remark-gfm, you'll need to use next.config.mjs
+    // as the package is ESM only
+    // https://github.com/remarkjs/remark-gfm#install
+    remarkPlugins: [],
+    rehypePlugins: [],
+    // If you use `MDXProvider`, uncomment the following line.
+    // providerImportSource: "@mdx-js/react",
   },
 })
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+  reactStrictMode: true,
+}
+
+module.exports = withMDX(withFonts(nextConfig))

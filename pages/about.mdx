@@ -1,3 +1,9 @@
+import PageLayout from '../components/PageLayout.tsx'
+
+export const meta = {
+  title: 'About',
+}
+
 With years of practical experience, my work resides at the intersection between technology, arts, and culture. I stem my practice from academic research, interdisciplinary design processes, and cutting-edge full-stack software engineering.
 
 Until June 2022, I worked as a software engineer at [Neighbourhoodie](https://neighbourhood.ie/), a software consulting agency that specialises in offline-capable applications and the [Apache CouchDB database](https://couchdb.apache.org/).
@@ -13,3 +19,15 @@ I did my undergrad at [RWTH Aachen University](https://www.rwth-aachen.de/). In 
 My current interests reside in distributed systems that ensure privacy and data ownership alongside considerations on usability. Please don't hesitate to reach out!
 
 [hello@kassel.works](mailto:hello@kassel.works)
+
+## Publications
+
+The following list shall provide an overview of all relevant academic publications that I authored or co-authored. You may obtain [the BibTeX directly from this website](/publications.bib).
+
+- Foradi, M., Kaßel, J., Pein, J., &amp; Crane, G. R. (2019). Multi-Modal Citizen Science: From Disambiguation to Transcription of Classical Literature. _Proceedings of the 30th ACM Conference on Hypertext and Social Media_, 49–53. https://doi.org/10.1145/3342220.3343667
+- Foradi, M., Pein, J., &amp; Kaßel, J. (2019). _Phonetic Transcription of Classical Literature: A Learnersourcing - Based Approach_. http://elte-dh.hu/conf2019/
+- Kaßel, J. (2020). _Hyperwell: Local-First, Collaborative Notebooks for Digital Annotation_ \[Universität Leipzig\]. https://doi.org/10.5281/zenodo.4012432
+- Kaßel, J., &amp; Köntges, T. (2020). From Me to You: Peer to Peer Collaboration With Linked Data. _Sharing the Experience: Workflows for the Digital Humanities. Proceedings of the DARIAH-CH Workshop 2019 (Neuchâtel)_. https://doi.org/10.5281/ZENODO.3633416
+- Nicolás Hinrichs, Maryam Foradi, Tariq Yousef, Elisa Hartmann, Susanne Triesch, Jan Kaßel und Johannes Pein. 2022. “Embodied Metarepresentations”. _Frontiers in Neurorobotics_ 16. ISSN: 1662-5218. https://doi.org/10.3389/fnbot.2022.836799
+
+export default ({children}) => <PageLayout meta={meta}>{children}</PageLayout>

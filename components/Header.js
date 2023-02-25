@@ -1,24 +1,13 @@
-import React, {Component} from 'react'
-import Link from 'next/link'
-import Anchor from './Anchor'
-import {MetaContext} from './Container'
-import Heading from './Heading'
-import Wrapper from './Wrapper'
+import style from '../layout/layout.module.css'
 
-export default class Header extends Component {
-  static contextType = MetaContext
-
-  render() {
-    return (
-      <Wrapper as="header">
-        <Heading>
-          <Link href="/">
-            <Anchor active={!this.context.title}>Jan Kaßel</Anchor>
-          </Link>
-
-          {this.context.title && <> – {this.context.title}</>}
-        </Heading>
-      </Wrapper>
-    )
-  }
+export default function Header() {
+  return (
+    <header className={style.wrapper}>
+      <h1 className="title">
+        <a href="https://kinopio.club/jan-s-portfolio-zgvQLiOhDpLTUnMxPMqEV">
+          Portfolio
+        </a>
+      </h1>
+    </header>
+  )
 }

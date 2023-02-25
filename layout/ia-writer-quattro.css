@@ -1,0 +1,6 @@
+@font-face {
+  font-family: 'iA Writer Quattro';
+  src: url('/fonts/ia-writer/quattro/iAWriterQuattroS-Regular.woff2')
+      format('woff2'),
+    url('/fonts/ia-writer/quattro/iAWriterQuattroS-Regular.woff') format('woff');
+}

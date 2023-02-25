@@ -1,0 +1,110 @@
+@import 'sang-bleu.css';
+@import 'ia-writer-mono.css';
+@import 'ia-writer-quattro.css';
+
+:root {
+  --medium-width: 450px;
+  --large-width: 670px;
+
+  --darkish: rgb(75, 75, 75);
+  --blue: rgb(55, 41, 158);
+  --blue-hover: rgba(55, 41, 158, 0.75);
+}
+
+html,
+body {
+  min-height: 100%;
+}
+body {
+  display: flex;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 15px;
+
+  font: 18px/100% 'SangBleu Republic', 'Times New Roman', times, serif;
+}
+@media screen and (min-width: 451px) and (max-width: 670px) {
+  body {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 671px) {
+  body {
+    font-size: 24px;
+    padding: 35px;
+  }
+}
+
+h1.title {
+  margin: 0 0 25px;
+  font-size: inherit;
+  font-weight: normal;
+  line-height: 140%;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 37px 0 25px 0;
+  font-size: inherit;
+  font-weight: bold;
+  line-height: 140%;
+}
+
+a {
+  color: var(--blue);
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 250ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+a.active {
+  color: inherit;
+  cursor: default;
+}
+a.active:hover {
+  color: inherit;
+}
+a code {
+  color: var(--blue);
+}
+a:hover code {
+  color: var(--blue-hover);
+}
+
+p,
+ul li {
+  line-height: 135%;
+}
+p {
+  margin: 0 0 15px;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 671px) {
+  p {
+    margin: 0 0 25px;
+  }
+}
+
+code {
+  display: inline-block;
+  padding: 0 2px;
+
+  font-family: 'iA Writer Mono';
+  font-size: 90%;
+  color: var(--darkish);
+}
+
+ul {
+  margin: 16px 0;
+  padding: 0 0 0 24px;
+}
+ul li {
+  margin-bottom: 12px;
+  font-size: 80%;
+}
+ul li:last-child {
+  margin-bottom: 0;
+}
