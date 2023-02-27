@@ -7,11 +7,11 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "fetch-log": "git clone https://github.com/falafeljan/thesis-log blog && node generate-index.js",
+    "fetch-log": "git clone https://github.com/jankaszel/thesis-log blog && node generate-index.js",
     "update-log": "(cd blog && git pull) && node generate-index.js"
   },
   "engines": {
-    "node": ">= 10"
+    "node": ">= 18"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,6 @@
   "devDependencies": {
     "@types/node": "18.14.1",
     "next-fonts": "^0.18.0",
-    "raw-loader": "^3.1.0",
     "typescript": "4.9.5"
   },
   "dependencies": {
@@ -29,12 +28,14 @@
     "@next/mdx": "^13.2.1",
     "classnames": "^2.3.2",
     "front-matter": "^4.0.2",
-    "marked": "^4.2.12",
     "next": "^13.2.1",
+    "next-mdx-remote": "^4.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^7.0.0",
+    "remark-frontmatter": "^4.0.1",
     "remark-gfm": "^3.0.1",
+    "remark-mdx-frontmatter": "^2.1.1",
     "remark-smartypants": "^2.0.0",
     "smartypants": "^0.1.6"
   },

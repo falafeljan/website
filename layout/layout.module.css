@@ -8,7 +8,7 @@
 
 @media (min-width: 671px) {
   .wrapper {
-    max-width: 600px;
+    max-width: 672px;
   }
 }
 
@@ -34,7 +34,7 @@
   opacity: 0.8;
 }
 .nav ul {
-  margin: 4px 0 0 -4px;
+  margin: 12px 0 0 -4px;
   padding: 0;
   list-style: none;
 }
