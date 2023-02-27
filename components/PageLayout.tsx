@@ -10,7 +10,7 @@ type Props = {
 
 export default function PageLayout({meta, children}: Props) {
   const title = useMemo(
-    () => (meta.title ? `Jan Kaßel - ${meta.title}` : 'Jan Kaßel'),
+    () => (meta.title ? `Jan Kaßel ⌁ ${meta.title}` : 'Jan Kaßel'),
     [meta],
   )
   return (

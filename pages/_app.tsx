@@ -1,6 +1,7 @@
 import React from 'react'
 import App from 'next/app'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 import classNames from 'classnames'
 
 import '../layout/global.css'
@@ -16,6 +17,7 @@ export default class MyApp extends App {
         <div className={classNames(styles.wrapper, styles.grow)}>
           <Component {...pageProps} />
         </div>
+        <Footer />
       </>
     )
   }

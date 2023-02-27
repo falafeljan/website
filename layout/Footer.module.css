@@ -1,0 +1,18 @@
+.footer {
+  margin-top: 48px;
+}
+.footer nav p {
+  margin: 0 0 12px 0;
+}
+.footer nav ul {
+  margin: 0 0 0 -4px;
+  padding: 0;
+  list-style: none;
+}
+.footer nav ul li {
+  display: inline-block;
+  margin-right: 4px;
+  padding: 2px 4px;
+
+  font: 16px/100% 'iA Writer Quattro';
+}
