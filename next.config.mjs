@@ -1,14 +1,13 @@
-const withFonts = require('next-fonts')
-const filterByKeys = require('./lib/filterByKeys')
+import withFonts from 'next-fonts'
+import createMDX from '@next/mdx'
+import remarkGfm from 'remark-gfm'
 
 // https://nextjs.org/docs/advanced-features/using-mdx
-const withMDX = require('@next/mdx')({
+// https://github.com/remarkjs/remark-gfm#install
+const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
-    // If you use remark-gfm, you'll need to use next.config.mjs
-    // as the package is ESM only
-    // https://github.com/remarkjs/remark-gfm#install
-    remarkPlugins: [],
+    remarkPlugins: [remarkGfm],
     rehypePlugins: [],
     // If you use `MDXProvider`, uncomment the following line.
     // providerImportSource: "@mdx-js/react",
@@ -21,4 +20,4 @@ const nextConfig = {
   reactStrictMode: true,
 }
 
-module.exports = withMDX(withFonts(nextConfig))
+export default withMDX(withFonts(nextConfig))

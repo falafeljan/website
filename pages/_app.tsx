@@ -1,7 +1,7 @@
 import React from 'react'
-import classNames from 'classnames'
 import App from 'next/app'
 import Header from '../components/Header'
+import classNames from 'classnames'
 
 import '../layout/global.css'
 import styles from '../layout/layout.module.css'
