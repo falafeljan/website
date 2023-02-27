@@ -6,6 +6,7 @@
 .posts li {
   margin: 0 0 10px;
   padding: 0;
+  font-size: inherit;
 }
 .posts li:last-child {
   margin-bottom: 0;
@@ -16,23 +17,58 @@
   }
 }
 
-.post {
+.item {
   display: flex;
   flex-flow: row;
 }
-.post time {
+.item time {
   flex-shrink: 0;
   display: inline-block;
-  margin: 7px 12px 3px 0;
+  margin: 2px 12px 1px 0;
 
   font-family: 'iA Writer Quattro', sans-serif;
   font-size: 60%;
 }
-.post h4 {
+.item h4 {
   display: inline-block;
   flex-grow: 1;
   margin: 0;
 
   font-size: inherit;
   font-weight: normal;
+}
+
+.post .meta {
+  margin-bottom: 37px;
+}
+
+.post .meta h2 {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.post .meta ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.post .meta ul li {
+  display: inline-block;
+  margin-right: 17px;
+
+  font-family: 'iA Writer Quattro', sans-serif;
+  font-size: 75%;
+}
+.post .meta ul li:last-child {
+  margin-right: 0;
+}
+@media screen and (min-width: 451px) and (max-width: 670px) {
+  .post .meta ul li {
+    font-size: 70%;
+  }
+}
+@media screen and (min-width: 671px) {
+  .post .meta ul li {
+    font-size: 65%;
+  }
 }

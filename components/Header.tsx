@@ -27,7 +27,7 @@ export default function Header() {
           href="https://kinopio.club/jan-s-portfolio-zgvQLiOhDpLTUnMxPMqEV"
           className={styles.button}
         >
-          Portfolio
+          Portfolio on Kinopio
           <img
             src="https://help.kinopio.club/assets/logo-base.png"
             alt="Kinopio"
