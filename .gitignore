@@ -10,7 +10,7 @@ public/fonts/scheherazade
 
 # blog
 blog-index.json
-blog
+/blog
 .env
 
 # infra
