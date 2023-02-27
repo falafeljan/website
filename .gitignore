@@ -3,10 +3,7 @@ node_modules/
 .next/
 
 # fonts
-public/fonts/ia-writer-mono
-public/fonts/ia-writer-quattro
-public/fonts/sang-bleu
-public/fonts/scheherazade
+public/fonts
 
 # blog
 blog-index.json

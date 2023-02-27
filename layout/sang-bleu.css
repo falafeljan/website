@@ -1,22 +1,22 @@
 @font-face {
   font-family: 'SangBleu Republic';
-  src: url('/fonts/sang-bleu/SangBleuRepublic-Regular-WebM.woff2')
+  src: url('https://static.kassel.works/sang-bleu/SangBleuRepublic-Regular-WebM.woff2')
       format('woff2'),
-    url('/fonts/sang-bleu/SangBleuRepublic-Regular-WebM.woff') format('woff');
+    url('https://static.kassel.works/sang-bleu/SangBleuRepublic-Regular-WebM.woff') format('woff');
 }
 
 @font-face {
   font-family: 'SangBleu Republic';
   font-style: italic;
-  src: url('/fonts/sang-bleu/SangBleuRepublic-RegularItalic-WebM.woff2')
+  src: url('https://static.kassel.works/sang-bleu/SangBleuRepublic-RegularItalic-WebM.woff2')
       format('woff2'),
-    url('/fonts/sang-bleu/SangBleuRepublic-RegularItalic-WebM.woff')
+    url('https://static.kassel.works/sang-bleu/SangBleuRepublic-RegularItalic-WebM.woff')
       format('woff');
 }
 
 @font-face {
   font-family: 'SangBleu Republic';
   font-weight: bold;
-  src: url('/fonts/sang-bleu/SangBleuRepublic-Bold-WebM.woff2') format('woff2'),
-    url('/fonts/sang-bleu/SangBleuRepublic-Bold-WebM.woff') format('woff');
+  src: url('https://static.kassel.works/sang-bleu/SangBleuRepublic-Bold-WebM.woff2') format('woff2'),
+    url('https://static.kassel.works/sang-bleu/SangBleuRepublic-Bold-WebM.woff') format('woff');
 }
