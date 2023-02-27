@@ -13,7 +13,7 @@
 }
 
 .nav {
-  font: 20px/100% 'iA Writer Quattro';
+  font: 16px/100% 'iA Writer Quattro';
 }
 .nav .button {
   display: inline-block;
@@ -27,7 +27,7 @@
 }
 .nav .button img {
   width: auto;
-  height: 18px;
+  height: 16px;
   margin-left: 8px;
 }
 .nav .button:hover {
@@ -47,4 +47,20 @@
 .nav ul li a.active {
   color: var(--blue-hover);
   cursor: default;
+}
+@media screen and (min-width: 451px) and (max-width: 670px) {
+  .nav {
+    font-size: 18px;
+  }
+  .nav .button img {
+    height: 18px;
+  }
+}
+@media screen and (min-width: 671px) {
+  .nav {
+    font-size: 20px;
+  }
+  .nav .button img {
+    height: 20px;
+  }
 }
