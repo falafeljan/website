@@ -1,13 +1,15 @@
 import withFonts from 'next-fonts'
 import createMDX from '@next/mdx'
-import remarkGfm from 'remark-gfm'
+
+import gfm from 'remark-gfm'
+import smartypants from 'remark-smartypants'
 
 // https://nextjs.org/docs/advanced-features/using-mdx
 // https://github.com/remarkjs/remark-gfm#install
 const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [gfm, smartypants],
     rehypePlugins: [],
     // If you use `MDXProvider`, uncomment the following line.
     // providerImportSource: "@mdx-js/react",

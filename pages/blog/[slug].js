@@ -9,6 +9,8 @@ import useDate from '../../effects/useDate'
 import {mediumWidth, largeWidth} from '../../layout/grid'
 import index from '../../log-index.json'
 
+import styles from '../../layout/Blog.module.css'
+
 const Meta = styled.div`
   margin-bottom: 37px;
 `
@@ -85,7 +87,7 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
   return {
-    paths: index.map(post => ({params: {slug: post.slug}}))
+    paths: index.map(post => ({params: {slug: post.slug}})),
     fallback: false, // can also be true or 'blocking'
   }
 }

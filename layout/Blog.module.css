@@ -1,0 +1,38 @@
+.posts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.posts li {
+  margin: 0 0 10px;
+  padding: 0;
+}
+.posts li:last-child {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 671px) {
+  .posts li {
+    margin-bottom: 20px;
+  }
+}
+
+.post {
+  display: flex;
+  flex-flow: row;
+}
+.post time {
+  flex-shrink: 0;
+  display: inline-block;
+  margin: 7px 12px 3px 0;
+
+  font-family: 'iA Writer Quattro', sans-serif;
+  font-size: 60%;
+}
+.post h4 {
+  display: inline-block;
+  flex-grow: 1;
+  margin: 0;
+
+  font-size: inherit;
+  font-weight: normal;
+}
