@@ -5,7 +5,7 @@ export default function Main() {
 export async function getServerSideProps(context) {
   return {
     redirect: {
-      destination: 'https://kinopio.club/jan-s-portfolio-zgvQLiOhDpLTUnMxPMqEV',
+      destination: 'https://kassel.works/about',
       permanent: false,
     },
   }
